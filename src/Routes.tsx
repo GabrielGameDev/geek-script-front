@@ -1,8 +1,14 @@
-import { Routes as WrapperRoutes, Route } from 'react-router-dom'
-import Home from './pages/Home'
+import { Routes as WrapperRoutes, Route, BrowserRouter } from 'react-router-dom'
+import { Home } from './pages/Home'
 
 export function Routes() {
-    <WrapperRoutes>
-        <Route path="/" element={<Home />} />
-    </WrapperRoutes>
+
+    return (
+        <BrowserRouter>
+            <WrapperRoutes>
+                <Route path="/" element={<Home />} />
+            </WrapperRoutes>
+        </BrowserRouter>
+
+    );
 }

@@ -8,7 +8,7 @@ interface IHeaderDiv {
 export const HeaderDiv = styled.div<IHeaderDiv>`
 display:flex;
 width: 100%;
-background-color: ${props => props.theme.colors.White};
+background-color: ${props => props.theme.colors.LightPrimary};
 margin:0px;
 justify-content:space-between;
 text-align:center;

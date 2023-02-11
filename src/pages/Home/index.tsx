@@ -1,5 +1,5 @@
 import {ThemeProvider, createGlobalStyle} from 'styled-components'
-import { useState } from 'react'
+import { ShopAll } from '../../Components/ButtonShopAll'
 import { Header } from '../../Components/Header'
 import { theme } from '../../Components/Theme/Theme'
 
@@ -33,10 +33,10 @@ export function Home() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-
       <Header />
-      Hello
+      <ShopAll />
       
+      Hello, world
     </ThemeProvider>
   )
 
