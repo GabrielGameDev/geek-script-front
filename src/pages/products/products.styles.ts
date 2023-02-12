@@ -81,3 +81,16 @@ padding: 1rem 1rem;
 text-align: right;
 
 `
+
+export const ProductsContainer = styled.div`
+
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 5rem;
+    
+`
+
+
+

@@ -9,7 +9,9 @@ import {
   FilterButton,
   FilterSelectDiv,
   Select,
+  ProductsContainer,
 } from "./products.styles";
+import ProductCard from "../../Components/ProductCard";
 
 export default function Products() {
   const [selectedButton, setSelectedButton] = useState("Action Figure");
@@ -72,6 +74,28 @@ export default function Products() {
             <p>Mostrando 1-12 de 100 resultados</p>
           </FilterSelectDiv>
         </Categories>
+        <ProductsContainer>
+          <ProductCard
+            image="https://m.media-amazon.com/images/I/818na3mReIL._AC_SL1500_.jpg"
+            name="Homem Aranha"
+            price={200}
+          ></ProductCard>
+          <ProductCard
+            image="https://m.media-amazon.com/images/I/813QHsWOlTL._AC_SL1500_.jpg"
+            name="Homem Aranha"
+            price={200}
+          ></ProductCard>
+          <ProductCard
+            image="https://images-americanas.b2w.io/produtos/6039250189/imagens/pikachu-de-pelucia-boneco-pokemon-30-cm-aproximado/6039250189_1_xlarge.jpg"
+            name="Homem Aranha"
+            price={200}
+          ></ProductCard>
+          <ProductCard
+            image="https://a-static.mlcdn.com.br/1500x1500/action-figure-son-goku-boneco-articulado-dragon-ball-z-actioncollection/actionkrypton/15962449746/4a986b69c72e2c8f8035a9c673f765b5.jpeg"
+            name="Homem Aranha"
+            price={200}
+          ></ProductCard>
+        </ProductsContainer>
       </Main>
     </>
   );
