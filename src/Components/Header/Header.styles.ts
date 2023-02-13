@@ -1,11 +1,8 @@
 import styled from 'styled-components';
 
 
-interface IHeaderDiv {
-    margin?:number | string;
-}
 
-export const HeaderDiv = styled.div<IHeaderDiv>`
+export const HeaderDiv = styled.div`
 display:flex;
 width: 100%;
 background-color: ${props => props.theme.colors.LightPrimary};
@@ -22,9 +19,8 @@ align-items:center;
     
 `
 
-export const MainImage = styled.img`
+export const HeaderImage = styled.img`
 width: ${props => `${props.width}px`};
-margin-right: 5px;
 `
 
 

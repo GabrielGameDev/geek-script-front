@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
                 <FC.HeaderDiv>
                         <div>
                                 <FC.HeaderLinks href="#">
-                                        <FC.MainImage width={50} src={logoGeek}></FC.MainImage>
+                                        <FC.HeaderImage width={50} src={logoGeek}></FC.HeaderImage>
                                 </FC.HeaderLinks>
                                 <FC.HeaderLinks href="#">Shop</FC.HeaderLinks>
                                 <FC.HeaderLinks href="#">Stories</FC.HeaderLinks>
@@ -19,9 +19,9 @@ export const Header: React.FC = () => {
                         <div>
 
                                 <FC.HeaderLinks href="#" >
-                                        <FC.MainImage src={iconCart} width={15}></FC.MainImage>
+                                        <FC.HeaderImage src={iconCart} width={15}></FC.HeaderImage>
                                 </FC.HeaderLinks>
-                                <FC.HeaderLinks href="#" >About</FC.HeaderLinks>
+                                <FC.HeaderLinks href="#" >Login</FC.HeaderLinks>
                         </div>
                 </FC.HeaderDiv>
         )

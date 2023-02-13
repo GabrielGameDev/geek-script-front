@@ -1,6 +1,6 @@
 import {ThemeProvider, createGlobalStyle} from 'styled-components'
-import { ShopAll } from '../../Components/ButtonShopAll'
 import { Header } from '../../Components/Header'
+import { MainContent } from '../../Components/MainContent'
 import { theme } from '../../Components/Theme/Theme'
 
 
@@ -34,9 +34,7 @@ export function Home() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header />
-      <ShopAll />
-      
-      Hello, world
+      <MainContent />
     </ThemeProvider>
   )
 
