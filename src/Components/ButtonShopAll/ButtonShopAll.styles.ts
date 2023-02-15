@@ -1,12 +1,22 @@
 import styled from 'styled-components';
 
 export const ShopAllButton = styled.a`
-width: 50px;
+width: 120px;
+height:45px;
 background-color: ${props => props.theme.colors.LightPrimary};
 color: ${props => props.theme.colors.Primary};
-text-align:center;
+justify-content:center;
 align-items:center;
 border: 2px solid;
 border-radius:5px;
 padding: 5px 10px;  
+display:flex;
+
+    :hover {
+        cursor:pointer;
+        color:${props => props.theme.colors.LightPrimary};
+        font-weight:bold;
+        background-color:${props => props.theme.colors.DarkPrimary};
+    }
+
 `

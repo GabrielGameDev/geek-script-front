@@ -1,25 +1,28 @@
 import React from "react";
+import { Container, Row, Col } from 'react-awesome-styled-grid';
 import * as FC from './MainContent.styles'
 import { ShopAll } from '../ButtonShopAll/index'
-import logoGeek from '../../../Images/imageLogo.png'
+import mainImage from '../../../Images/images.jpg'
 
 export const MainContent: React.FC = () => {
     return (
         <>
-            <FC.MainDiv maxWidth={160}>
-                <div>
-                    <FC.MainH1>Os melhores produto Geek estão aqui</FC.MainH1>
-                    <FC.MainP>Produto de todo o universo Geek. Bonecos Funko, camisetas, Action Figure, e muito mais com qualidade e garantia na entrega.</FC.MainP>
-                    <ShopAll />
-                </div>
-            </FC.MainDiv>
-            <FC.MainDiv maxWidth={200}>
-                <div>
-                    <FC.MainImage src={logoGeek}>
-
-                    </FC.MainImage>
-                </div>
-            </FC.MainDiv>
+            <FC.Grid>
+                
+                    <FC.Title>Os melhores produto Geek estão aqui</FC.Title>
+                
+                    <FC.ContentBox>
+                    <FC.Subtitle></FC.Subtitle>
+                    <FC.Subtitle>Produto de todo o universo Geek. Bonecos Funko, camisetas, Action Figure, e muito mais com qualidade e garantia na entrega.</FC.Subtitle>
+                    <FC.Subtitle></FC.Subtitle>
+                    </FC.ContentBox>
+                
+                    <FC.Content1> <ShopAll /> </FC.Content1>
+                
+                
+                    <FC.Content2> <FC.MainImage src={mainImage} /> </FC.Content2>
+                
+            </FC.Grid>
         </>
     )
 }
