@@ -19,7 +19,7 @@ export const StoreDescription = styled.div`
 
     background-color: ${colors.DarkPrimary};
     color: ${colors.Text};
-    padding: 10px 10%;
+    padding: 40px 10%;
     width: 100%;
 
     div{
@@ -88,7 +88,8 @@ export const ProductsContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto;
-    grid-gap: 5rem;
+    grid-gap: 3rem;
+
     
 `
 
