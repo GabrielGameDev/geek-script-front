@@ -1,4 +1,5 @@
 import {ThemeProvider, createGlobalStyle} from 'styled-components'
+import { Footer } from '../../Components/Footer'
 import { Header } from '../../Components/Header'
 import { MainContent } from '../../Components/MainContent'
 import { theme } from '../../Components/Theme/Theme'
@@ -33,6 +34,7 @@ export function Home() {
       <GlobalStyle />
       <Header />
       <MainContent />
+      <Footer />
     </ThemeProvider>
   )
 

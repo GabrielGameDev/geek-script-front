@@ -13,7 +13,9 @@ export const MainContent: React.FC = () => {
                 
                     <FC.ContentBox>
                     <FC.Subtitle></FC.Subtitle>
-                    <FC.Subtitle>Produto de todo o universo Geek. Bonecos Funko, camisetas, Action Figure, e muito mais com qualidade e garantia na entrega.</FC.Subtitle>
+                    <FC.Subtitle>Produto de todo o universo Geek. Bonecos Funko, 
+                        camisetas, Action Figure, e muito mais com qualidade
+                         e garantia na entrega.</FC.Subtitle>
                     <FC.Subtitle></FC.Subtitle>
                     </FC.ContentBox>
                 

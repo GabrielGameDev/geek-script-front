@@ -12,7 +12,7 @@ grid-template-rows: 0.1fr 0.2fr 0.15fr 1fr;
 grid-template-areas: 
 
 ". . title . . "
-". . subtitle . ."
+". . contentBox . ."
 ". . button . ."
 "c c c c c";
 
@@ -33,7 +33,7 @@ export const ContentBox = styled.div`
   gap: 0.25rem;
   padding: 0.25rem;
   align-items: center;
-  grid-area: subtitle;
+  grid-area: contentBox;
   justify-content: center;
   @media (max-width: 550px) {
     flex-direction: column; 
