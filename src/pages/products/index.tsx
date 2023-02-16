@@ -95,6 +95,11 @@ export default function Products() {
             name="Homem Aranha"
             price={200}
           ></ProductCard>
+          <ProductCard
+            image="https://a-static.mlcdn.com.br/1500x1500/action-figure-son-goku-boneco-articulado-dragon-ball-z-actioncollection/actionkrypton/15962449746/4a986b69c72e2c8f8035a9c673f765b5.jpeg"
+            name="Homem Aranha"
+            price={200}
+          ></ProductCard>
         </ProductsContainer>
       </Main>
     </>
