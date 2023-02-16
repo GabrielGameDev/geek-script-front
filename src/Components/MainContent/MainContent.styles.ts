@@ -60,6 +60,10 @@ grid-area:c;
 export const MainImage = styled.img<IGrid>`
 grid-area: c;
 margin-bottom:20px;
-width:60%;
+width:55%;
 border-radius:20px;
+@media (max-width: 550px) {
+    width:100%; 
+    border-radius:0px;
+  }
 `

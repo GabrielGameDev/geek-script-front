@@ -23,8 +23,6 @@ const GlobalStyle = createGlobalStyle`
     #root {
       display:block;
       width:100%;
-      /* @media (min-width: 1024px) {
-      display:flex; */
     } 
 
   }

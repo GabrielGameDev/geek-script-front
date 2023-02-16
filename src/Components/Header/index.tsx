@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
                 <FC.HeaderDiv>
                         <div>
                                 <FC.HeaderLinks href="#">
-                                        <FC.HeaderImage width={50} src={logoGeek}></FC.HeaderImage>
+                                        <FC.HeaderImage width={60} src={logoGeek}></FC.HeaderImage>
                                 </FC.HeaderLinks>
                                 <FC.HeaderLinks href="#">Shop</FC.HeaderLinks>
                                 <FC.HeaderLinks href="#">Stories</FC.HeaderLinks>
