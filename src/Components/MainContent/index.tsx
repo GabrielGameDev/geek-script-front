@@ -6,7 +6,7 @@ import mainImage from '../../../Images/images.jpg'
 
 export const MainContent: React.FC = () => {
     return (
-        <>
+        <div>
             <FC.Grid>
                 
                     <FC.Title>Os melhores produto Geek estão aqui</FC.Title>
@@ -25,6 +25,6 @@ export const MainContent: React.FC = () => {
                     <FC.Content2> <FC.MainImage src={mainImage} /> </FC.Content2>
                 
             </FC.Grid>
-        </>
+        </div>
     )
 }
