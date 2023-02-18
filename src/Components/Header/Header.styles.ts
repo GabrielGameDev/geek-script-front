@@ -10,6 +10,7 @@ margin:0px;
 justify-content:space-between;
 text-align:center;
 align-items:center;
+font-size:1.3rem;
 
     div {
         display:flex;

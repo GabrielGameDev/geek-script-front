@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
   body {
  
     background-color: ${props => props.theme.colors.Black};
-    display:flex;
     margin:0px;
     color:${props => props.theme.colors.Primary};
     flex-direction:row;
