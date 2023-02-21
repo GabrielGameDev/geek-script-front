@@ -58,9 +58,6 @@ export const StyledForm = styled.form`
    padding:1px;
    justify-content:center;
 
-
-  
-
     @media (min-width: 1024px) {
         margin-top:2%;
     }

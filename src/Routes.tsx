@@ -4,8 +4,10 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import { Home } from "./pages/Home";
+import { Login } from "./pages/Login";
 import Products from "./pages/products";
 import Produto from "./pages/Produto";
+
 
 export function Routes() {
   return (
@@ -14,6 +16,8 @@ export function Routes() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<Produto />} />
+        <Route path="/login" element={<Login />} />
+
       </WrapperRoutes>
     </BrowserRouter>
   );
