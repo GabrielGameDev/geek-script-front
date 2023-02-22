@@ -1,15 +1,5 @@
 import styled from 'styled-components';
-
-export const colors = {
-    DarkPrimary: '#512DA8',
-    LightPrimary: '#D1C4E9',
-    Primary: '#673AB7',
-    Text: '#FFFFFF',
-    Accent: '#FF9800',
-    PrimaryText: '#212121',
-    SecondaryText: '#757575',
-    Divider: '#BDBDBD',
-}
+import { theme } from "../Theme/Theme";
 
 interface FilterButtonProps{
     selected: boolean;
@@ -17,8 +7,8 @@ interface FilterButtonProps{
 
 export const StoreDescription = styled.div`
 
-    background-color: ${colors.DarkPrimary};
-    color: ${colors.Text};
+    background-color: ${theme.colors.DarkPrimary};
+    color: ${theme.colors.White};
     padding: 40px 10%;
     width: 100%;
 
@@ -48,14 +38,14 @@ export const Categories = styled.div`
 `
 
 export const FilterButton = styled.button<FilterButtonProps>`
-    background-color: ${props => props.selected ? colors.Primary : colors.LightPrimary};
-    color: ${props => props.selected ? colors.Text : colors.PrimaryText};
+    background-color: ${props => props.selected ? theme.colors.Primary : theme.colors.LightPrimary};
+    color: ${props => props.selected ? theme.colors.White : theme.colors.Primary};
     padding: 1rem 3rem;
     height: 70%;
     transition: 0.3s;
     :hover{
-        background-color: ${colors.Accent};
-        color: ${colors.Text};
+        background-color: ${theme.colors.Accent};
+        color: ${theme.colors.White};
         cursor: pointer;
     }
 `
@@ -92,6 +82,7 @@ export const ProductsContainer = styled.div`
 
     
 `
+
 
 
 

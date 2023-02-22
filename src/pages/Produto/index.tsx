@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { Header } from "../../Components/Header";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../Components/Theme/Theme";
-import { Main } from "../products/products.styles";
+import { Main } from "../../Components/Products/producsts.style";
 import * as style from "./product.styles";
 
 export default function Produto() {
