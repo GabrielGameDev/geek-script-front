@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 
 
+interface LinkProps {
+    colorLink?: string;
+    marginY?: string;
+    marginX?: string;
+}
+
+
+
 export const Grid = styled.div`
 height:fit-content;
     display: grid;
@@ -25,7 +33,7 @@ export const StyledP = styled.p`
 `
 
 export const StyledForm = styled.form`
-grid-area: a;
+
    background-color: ${props => props.theme.colors.LightPrimary};
    border: solid 1px ${props => props.theme.colors.DarkPrimary};
    border-radius: 5px;
@@ -33,29 +41,39 @@ grid-area: a;
    flex-direction:column;
    display:flex;
    text-align:left;
-   margin:5% ;
+   margin-bottom:1%;
     `
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<LinkProps>`
     border:none;
     border-radius:2px 0px 0px 2px;
     padding:7px;
-    margin: 10px 30px;
+    margin: ${props =>  props.marginY ||  '10px' } ${props =>  props.marginX ||  '30px' };
     border-radius:2px;
     :focus {
         outline:none;
     }
 `
 
-export const StyledLink = styled.a`
+export const StyledLabel = styled.label`
+    padding-left:30px;
+`
+
+export const StyledLink = styled.a<LinkProps>`
 text-decoration:none;
 cursor:pointer;
 text-align:end;
 margin:10px 30px;
+color: ${props =>  props.colorLink ||  props.theme.colors.DarkPrimary };
 
 `
 
-export const StyledDiv = styled.div`
+export const StyledDivForm = styled.div`
 display:flex;
 justify-content:space-between;
+`
+export const StyledDiv = styled.div`
+grid-area: a;
+justify-content:center;
+padding:5%;
 `
