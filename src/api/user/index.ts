@@ -1,10 +1,10 @@
 import api from "../config";
 
-interface User {
+export interface User {
     name: string;
     email: string;
     password: string;
-    isAdmin: boolean;
+    isAdm: boolean;
 }
 
 export async function createUser(user: User) {

@@ -33,3 +33,5 @@ margin-right: 10px;
 text-align:center;
 font-size: 0.8em;
 `
+
+

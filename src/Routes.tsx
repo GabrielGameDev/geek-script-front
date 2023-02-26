@@ -9,7 +9,7 @@ import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import Products from "./pages/products";
 import Produto from "./pages/Produto";
-
+import Cadastro from "./pages/Cadastro";
 
 export function Routes() {
   return (
@@ -21,7 +21,7 @@ export function Routes() {
         <Route path="/login" element={<Login />} />
         <Route path="/adm" element={<Adm />} />
         <Route path="/cart" element={<Cart />} />
-
+        <Route path="/cadastro" element={<Cadastro />} />
       </WrapperRoutes>
     </BrowserRouter>
   );
