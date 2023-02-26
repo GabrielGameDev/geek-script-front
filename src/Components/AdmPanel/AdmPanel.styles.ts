@@ -89,3 +89,6 @@ margin-left:10px;
     }
 `
 
+export const StyeledA = styled.a`
+text-decoration:none;
+`

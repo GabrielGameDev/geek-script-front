@@ -9,19 +9,19 @@ export const Header: React.FC = () => {
         return (
                 <FC.HeaderDiv>
                         <div>
-                                <FC.HeaderLinks href="#">
+                                <FC.HeaderLinks href="http://localhost:5173/">
                                         <FC.HeaderImage width={60} src={logoGeek}></FC.HeaderImage>
                                 </FC.HeaderLinks>
-                                <FC.HeaderLinks href="#">Shop</FC.HeaderLinks>
+                                <FC.HeaderLinks href="http://localhost:5173/products">Shop</FC.HeaderLinks>
                                 <FC.HeaderLinks href="#">Stories</FC.HeaderLinks>
                                 <FC.HeaderLinks href="#">About</FC.HeaderLinks>
                         </div>
                         <div>
 
-                                <FC.HeaderLinks href="#" >
+                                <FC.HeaderLinks href="http://localhost:5173/cart#" >
                                         <FC.HeaderImage src={iconCart} width={15}></FC.HeaderImage>
                                 </FC.HeaderLinks>
-                                <FC.HeaderLinks href="#" >Login</FC.HeaderLinks>
+                                <FC.HeaderLinks href="http://localhost:5173/login" >Login</FC.HeaderLinks>
                         </div>
                 </FC.HeaderDiv>
         )

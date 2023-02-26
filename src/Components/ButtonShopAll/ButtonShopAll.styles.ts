@@ -11,6 +11,7 @@ border: 2px solid;
 border-radius:5px;
 padding: 5px 10px;  
 display:flex;
+text-decoration:none;
 
     :hover {
         cursor:pointer;
