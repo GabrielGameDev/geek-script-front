@@ -11,6 +11,7 @@ import Products from "./pages/products";
 import Produto from "./pages/Produto";
 import { CheckoutCart } from "./pages/CartCheckout";
 
+import Cadastro from "./pages/Cadastro";
 
 export function Routes() {
   return (
@@ -26,6 +27,7 @@ export function Routes() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<CheckoutCart />} />
 
+        <Route path="/cadastro" element={<Cadastro />} />
       </WrapperRoutes>
     </BrowserRouter>
   );

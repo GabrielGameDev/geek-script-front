@@ -1,6 +1,6 @@
 import api from "../config";
 
-interface Product {
+export interface Product {
     name: string;
     photo: string;
     category_id: string;

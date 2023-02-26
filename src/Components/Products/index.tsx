@@ -13,22 +13,33 @@ import {
 } from "./producsts.style";
 import ProductCard from "../../Components/ProductCard";
 
-import { getProducts } from "../../api/produtos";
+import { getProducts, Product } from "../../api/produtos";
 
 export default function ProductsComponent() {
   const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    getProducts().then((response) => {
-      console.log(response);
-    });
-  }, []);
-
-  const [selectedButton, setSelectedButton] = useState("Action Figure");
+  const [shownProducts, setShownProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedButton, setSelectedButton] = useState("Todos");
 
   const handleFilterButton = (button: string) => {
     setSelectedButton(button);
   };
+
+  function handleShowMore() {
+    setCurrentPage(currentPage + 1);
+    setShownProducts(products.slice(0, currentPage * 8));
+  }
+
+  useEffect(() => {
+    getProducts().then((response) => {
+      console.log(response.data);
+      setProducts(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    setShownProducts(products.slice(0, 8));
+  }, [products]);
 
   return (
     <>
@@ -48,6 +59,12 @@ export default function ProductsComponent() {
       <Main>
         <Categories>
           <div>
+            <FilterButton
+              selected={selectedButton === "Todos" ? true : false}
+              onClick={() => handleFilterButton("Todos")}
+            >
+              Todos
+            </FilterButton>
             <FilterButton
               selected={selectedButton === "Action Figure" ? true : false}
               onClick={() => handleFilterButton("Action Figure")}
@@ -81,36 +98,27 @@ export default function ProductsComponent() {
               <option value="filter2">Filter 2</option>
               <option value="filter3">Filter 3</option>
             </Select>
-            <p>Mostrando 1-12 de 100 resultados</p>
+            <p>
+              Mostrando 1-{shownProducts.length} de {products.length} resultados
+            </p>
           </FilterSelectDiv>
         </Categories>
         <ProductsContainer>
-          <ProductCard
-            image="https://m.media-amazon.com/images/I/818na3mReIL._AC_SL1500_.jpg"
-            name="Homem Aranha"
-            price={200}
-          ></ProductCard>
-          <ProductCard
-            image="https://m.media-amazon.com/images/I/813QHsWOlTL._AC_SL1500_.jpg"
-            name="Homem Aranha"
-            price={200}
-          ></ProductCard>
-          <ProductCard
-            image="https://images-americanas.b2w.io/produtos/6039250189/imagens/pikachu-de-pelucia-boneco-pokemon-30-cm-aproximado/6039250189_1_xlarge.jpg"
-            name="Homem Aranha"
-            price={200}
-          ></ProductCard>
-          <ProductCard
-            image="https://a-static.mlcdn.com.br/1500x1500/action-figure-son-goku-boneco-articulado-dragon-ball-z-actioncollection/actionkrypton/15962449746/4a986b69c72e2c8f8035a9c673f765b5.jpeg"
-            name="Homem Aranha"
-            price={200}
-          ></ProductCard>
-          <ProductCard
-            image="https://a-static.mlcdn.com.br/1500x1500/action-figure-son-goku-boneco-articulado-dragon-ball-z-actioncollection/actionkrypton/15962449746/4a986b69c72e2c8f8035a9c673f765b5.jpeg"
-            name="Homem Aranha"
-            price={200}
-          ></ProductCard>
+          {shownProducts.map((product: any) => {
+            return (
+              <ProductCard
+                key={product.id_product}
+                id={product.id_product}
+                image={product.photo}
+                name={product.name}
+                price={product.price}
+              ></ProductCard>
+            );
+          })}
         </ProductsContainer>
+        <div>
+          <button onClick={handleShowMore}>Mostrar mais</button>
+        </div>
       </Main>
     </>
   );

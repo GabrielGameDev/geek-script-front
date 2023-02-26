@@ -4,9 +4,20 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../../Components/Theme/Theme";
 import { Main } from "../../Components/Products/producsts.style";
 import * as style from "./product.styles";
+import { getProduct } from "../../api/produtos";
+import { useEffect } from "react";
+import { useState } from "react";
 
 export default function Produto() {
   const { id } = useParams();
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    getProduct(id).then((response) => {
+      console.log(response.data);
+      setProduct(response.data);
+    });
+  }, []);
 
   return (
     <>
@@ -17,13 +28,28 @@ export default function Produto() {
       <Main>
         <style.Section>
           <style.Images>
-            <img src="../../../Images/imageTeste.jpg" alt="" />
+            <img src={product.photo} alt="" />
             <img src="../../../Images/imageTeste.jpg" alt="" />
             <img src="../../../Images/imageTeste.jpg" alt="" />
             <img src="../../../Images/imageTeste.jpg" alt="" />
           </style.Images>
           <style.ProductInfo>
-            <h1>Boneco Homem de Ferro {id}</h1>
+            <h1>{product.name}</h1>
+            <h2>R${product.price}</h2>
+            <p>{product.description}</p>
+            <p>Tamanho</p>
+            <style.SizeDiv>
+              <style.SizeButton>P</style.SizeButton>
+              <style.SizeButton>M</style.SizeButton>
+              <style.SizeButton>G</style.SizeButton>
+              <style.SizeButton>GG</style.SizeButton>
+            </style.SizeDiv>
+
+            <div>
+              <style.AddToCart>
+                Adicionar ao carrinho - {product.price}
+              </style.AddToCart>
+            </div>
           </style.ProductInfo>
         </style.Section>
       </Main>

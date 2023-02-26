@@ -1,9 +1,8 @@
 import React from "react";
-import * as FC from './Header.styles'
-import logoGeek from '../../../Images/imageLogo.png'
-import iconCart from '../../../Images/icon-cart.svg'
-
-
+import * as FC from "./Header.styles";
+import logoGeek from "../../../Images/imageLogo.png";
+import iconCart from "../../../Images/icon-cart.svg";
+import { Link } from "react-router-dom";
 
 export const Header: React.FC = () => {
         return (
