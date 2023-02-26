@@ -3,6 +3,7 @@ import {
   Route,
   BrowserRouter,
 } from "react-router-dom";
+import { Cart } from "./pages/Cart";
 import { Adm } from "./pages/AdmPanel";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
@@ -19,6 +20,7 @@ export function Routes() {
         <Route path="/products/:id" element={<Produto />} />
         <Route path="/login" element={<Login />} />
         <Route path="/adm" element={<Adm />} />
+        <Route path="/cart" element={<Cart />} />
 
       </WrapperRoutes>
     </BrowserRouter>

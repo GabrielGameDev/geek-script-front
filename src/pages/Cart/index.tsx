@@ -1,19 +1,21 @@
-import {ThemeProvider, createGlobalStyle} from 'styled-components'
+import {ThemeProvider} from 'styled-components'
+import { CartContent } from '../../Components/Cart'
 import { Footer } from '../../Components/Footer'
 import { Header } from '../../Components/Header'
-import { LoginContent } from '../../Components/LoginContent'
 import { theme } from '../../Components/Theme/Theme'
 import { GlobalStyle } from '../../Components/GlobalStyleGuide'
 
-export function Login() {
+export function Cart() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header />
-      <LoginContent />
+      <CartContent />
       <Footer />
     </ThemeProvider>
   )
 
   
 }
+export { CartContent }
+
