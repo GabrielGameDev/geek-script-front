@@ -10,8 +10,9 @@ import { Login } from "./pages/Login";
 import Products from "./pages/products";
 import Produto from "./pages/Produto";
 import { CheckoutCart } from "./pages/CartCheckout";
-
 import Cadastro from "./pages/Cadastro";
+import { SucessCheck } from "./pages/Sucesso";
+import { Profile } from "./pages/Profile";
 
 export function Routes() {
   return (
@@ -26,8 +27,9 @@ export function Routes() {
         <Route path="/adm/pedidos" element={<AdmOrders />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<CheckoutCart />} />
-
+        <Route path="/sucesso" element={<SucessCheck />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/perfil" element={<Profile />} />
       </WrapperRoutes>
     </BrowserRouter>
   );
