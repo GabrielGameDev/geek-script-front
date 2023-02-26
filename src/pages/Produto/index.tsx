@@ -4,9 +4,20 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../../Components/Theme/Theme";
 import { Main } from "../../Components/Products/producsts.style";
 import * as style from "./product.styles";
+import { getProduct } from "../../api/produtos";
+import { useEffect } from "react";
+import { useState } from "react";
 
 export default function Produto() {
   const { id } = useParams();
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    getProduct(id).then((response) => {
+      console.log(response.data);
+      setProduct(response.data);
+    });
+  }, []);
 
   return (
     <>
@@ -17,7 +28,7 @@ export default function Produto() {
       <Main>
         <style.Section>
           <style.Images>
-            <img src="../../../Images/imageTeste.jpg" alt="" />
+            <img src={product.photo} alt="" />
             <img src="../../../Images/imageTeste.jpg" alt="" />
             <img src="../../../Images/imageTeste.jpg" alt="" />
             <img src="../../../Images/imageTeste.jpg" alt="" />

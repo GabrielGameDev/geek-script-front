@@ -6,8 +6,11 @@ export const Images = styled.div`
     width: 50%;
     gap: 1rem;
     img{
-        width: 100%;
+        width: 20rem;
+        height: 20rem;
+        object-fit: cover;
         border: 1px solid #ccc;
+        
     }
 `
 
