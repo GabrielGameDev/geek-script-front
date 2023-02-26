@@ -34,7 +34,22 @@ export default function Produto() {
             <img src="../../../Images/imageTeste.jpg" alt="" />
           </style.Images>
           <style.ProductInfo>
-            <h1>Boneco Homem de Ferro {id}</h1>
+            <h1>{product.name}</h1>
+            <h2>R${product.price}</h2>
+            <p>{product.description}</p>
+            <p>Tamanho</p>
+            <style.SizeDiv>
+              <style.SizeButton>P</style.SizeButton>
+              <style.SizeButton>M</style.SizeButton>
+              <style.SizeButton>G</style.SizeButton>
+              <style.SizeButton>GG</style.SizeButton>
+            </style.SizeDiv>
+
+            <div>
+              <style.AddToCart>
+                Adicionar ao carrinho - {product.price}
+              </style.AddToCart>
+            </div>
           </style.ProductInfo>
         </style.Section>
       </Main>
