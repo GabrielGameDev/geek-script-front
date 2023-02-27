@@ -6,7 +6,6 @@ export default function Cadastro() {
     name: "",
     email: "",
     password: "",
-    isAdm: false,
   });
 
   function handleNameChange(event) {
@@ -35,9 +34,19 @@ export default function Cadastro() {
       return;
     }
 
-    createUser(user);
-    window.alert(`Usuário ${user.name} cadastrado com sucesso!`);
-    window.location.href = "/";
+    createUser(user)
+      .then((response) => {
+        if (response.status === 201) {
+          window.alert(`Usuário ${user.name} cadastrado com sucesso!`);
+          window.location.href = "/";
+        }
+      })
+      .catch((error) => {
+        window.alert(error.response.data.message);
+      });
+
+    // window.alert(`Usuário ${user.name} cadastrado com sucesso!`);
+    // window.location.href = "/";
   }
   return (
     <div>

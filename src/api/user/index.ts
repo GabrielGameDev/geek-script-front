@@ -4,11 +4,11 @@ export interface User {
     name: string;
     email: string;
     password: string;
-    isAdm: boolean;
+    isAdm?: string;
 }
 
 export async function createUser(user: User) {
-    return api.post("/user", user);
+    return api.post("/user/register", user);
 }
 
 export async function getUsers() {
