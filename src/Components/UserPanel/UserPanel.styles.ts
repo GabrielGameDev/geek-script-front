@@ -3,27 +3,24 @@ import styled from 'styled-components';
 interface GridProps {
     gridArea?: string;
     gridSize?: string;
+    textColor?:string;
 
 }
 
-export const Grid = styled.div<GridProps>`
+export const Box = styled.div`
     height:fit-content;
-    display: grid;
-    grid-template-columns: ${props => props.gridSize || '1fr 4fr'};
-
+    display: block;
     text-align:center;
     align-items:center;
     background-color: ${props => props.theme.colors.Primary};
 
 `
 
-export const ContentBox = styled.div`
+export const ContentBox = styled.div<GridProps>`
 display:grid;
-grid-template-areas:
-"a . . . ."
-"b . . . ."
-"c d e f g";
+grid-template-columns:repeat(5, 1fr);
 grid-gap: 10px;
+
 `
 
 export const StyledUl = styled.ul`
@@ -60,10 +57,11 @@ padding:10px;
 grid-area:a;
 `
 export const StyledH4 = styled.h4<GridProps>`
-    color: ${props => props.theme.colors.Accent};
+color: ${props => props.textColor || props.theme.colors.LightPrimary };  
 text-align:start;
 padding:10px;
-grid-area:${props => props.gridArea};
+font-size:1.1rem;
+
 
 `
 
@@ -91,4 +89,11 @@ margin-left:10px;
 
 export const StyeledA = styled.a`
 text-decoration:none;
+`
+
+export const StyledP = styled.p<GridProps>`
+color: ${props => props.textColor || props.theme.colors.LightPrimary };  
+text-align:start;
+padding:10px;
+font-size: 0.9rem;
 `

@@ -13,6 +13,7 @@ import { CheckoutCart } from "./pages/CartCheckout";
 import Cadastro from "./pages/Cadastro";
 import { SucessCheck } from "./pages/Sucesso";
 import { Profile } from "./pages/Profile";
+import { UserOrders } from "./pages/UserPanel";
 
 export function Routes() {
   return (
@@ -30,6 +31,7 @@ export function Routes() {
         <Route path="/sucesso" element={<SucessCheck />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/perfil" element={<Profile />} />
+        <Route path="/pedidos" element={<UserOrders />} />
       </WrapperRoutes>
     </BrowserRouter>
   );
