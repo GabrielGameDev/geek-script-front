@@ -3,6 +3,7 @@ import * as FC from "./LoginContent.styles";
 import { useState } from "react";
 
 import { login } from "../../api/login";
+import { getUser } from "../../api/user";
 
 export const LoginContent: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -34,11 +35,15 @@ export const LoginContent: React.FC = () => {
         if (response.status === 200) {
           window.alert(`Usuário ${email} logado com sucesso!`);
           console.log(response.data);
-          // window.location.href = "/";
+          localStorage.setItem("token", response.data);
+          //   getUser("3").then((response) => {
+          //     console.log(response.data);
+          //   });
         }
       })
       .catch((error) => {
-        window.alert(error.response.data.message);
+        window.alert("Usuário ou senha inválidos!");
+        console.log(error);
       });
   }
 
