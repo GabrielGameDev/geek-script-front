@@ -22,6 +22,7 @@ font-size:1.3rem;
 
 export const HeaderImage = styled.img`
 width: ${props => `${props.width}px`};
+margin-bottom:10px;
 `
 
 
@@ -33,5 +34,17 @@ margin-right: 10px;
 text-align:center;
 font-size: 0.8em;
 `
-
+export const Counter = styled.div`
+    display:none;
+    height: 12px;
+    width: 12px;
+    position: relative;
+    left:13px;
+    top:8px;
+    font-size: 8px;
+    color: white;
+    justify-content: center;
+    background-color: ${props => props.theme.colors.Accent} ;
+    border-radius:5rem;
+`
 

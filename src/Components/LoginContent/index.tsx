@@ -58,10 +58,10 @@ export const LoginContent: React.FC = () => {
             onChange={handleEmailChange}
           ></FC.StyledInput>
           <FC.StyledInput
-            placeholder="Senha"
+            placeholder="Senha" type='password'
             onChange={handlePasswordChange}
           ></FC.StyledInput>
-          <button onClick={handleSubmit}>Login</button>
+          <FC.StyledButton onClick={handleSubmit}>Login</FC.StyledButton>
           <FC.StyledDivForm>
             <FC.StyledLabel>
               <FC.StyledInput marginX="0px" type="checkbox"></FC.StyledInput>{" "}

@@ -1,7 +1,5 @@
 import React from "react";
 import * as FC from './Footer.styles'
-import logoGeek from '../../../Images/imageLogo.png'
-import iconCart from '../../../Images/icon-cart.svg'
 
 export const Footer: React.FC = () => {
     return (

@@ -43,6 +43,8 @@ export const FilterButton = styled.button<FilterButtonProps>`
     padding: 1rem 3rem;
     height: 70%;
     transition: 0.3s;
+    border:none;
+    border-radius:0.3rem;
     :hover{
         background-color: ${theme.colors.Accent};
         color: ${theme.colors.White};

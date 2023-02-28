@@ -77,3 +77,25 @@ grid-area: a;
 justify-content:center;
 padding:5%;
 `
+
+export const StyledButton = styled.button<LinkProps>`
+margin:${props =>  props.marginY ||  '10px' } ${props =>  props.marginX ||  '30px' };
+background-color: ${props => props.theme.colors.Primary};
+color: ${props => props.theme.colors.LightPrimary};
+justify-content:center;
+align-items:center;
+border: 2px solid;
+border-radius:5px;
+padding: 5px 10px;  
+display:flex;
+text-decoration:none;
+font-weight:bold;
+
+    :hover {
+        cursor:pointer;
+        color:${props => props.theme.colors.LightPrimary};
+        font-weight:bold;
+        background-color:${props => props.theme.colors.DarkPrimary};
+    }
+
+`
