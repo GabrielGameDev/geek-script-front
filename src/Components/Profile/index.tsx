@@ -11,7 +11,8 @@ export const ProfileContent: React.FC = () => {
                     <FC.StyledInput value={'Nome do usuário'}></FC.StyledInput>
                     <FC.StyledLabel>Email</FC.StyledLabel>
                     <FC.StyledInput value={'Email do usuário'}></FC.StyledInput>
-
+                    <FC.StyledLabel>Meu pedidos</FC.StyledLabel>
+                    <FC.StyledA href="http://localhost:5173/pedidos">Clique aqui</FC.StyledA>
                 </FC.StyledForm>
             </FC.StyledDiv>
         </FC.Grid>

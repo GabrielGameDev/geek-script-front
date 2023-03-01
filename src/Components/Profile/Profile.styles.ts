@@ -28,7 +28,7 @@ export const StyledP = styled.p`
     font: bold;
     font-size:2rem;
     border-bottom: 1px solid gray;
-    margin-bottom:5%
+    margin-bottom:5%;
 `
 
 export const StyledForm = styled.form`
@@ -51,4 +51,15 @@ export const StyledInput = styled.input<LinkProps>`
 export const StyledLabel = styled.label`
    margin-top:3%;
 
+`
+
+export const StyledA = styled.a`
+    text-decoration:none;
+    font-size:0.83rem;
+    color:${props => props.theme.colors.Black};
+    margin-top:3%;
+
+    :hover { 
+        cursor:pointer;
+    }
 `

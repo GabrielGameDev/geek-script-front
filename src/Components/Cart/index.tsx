@@ -29,7 +29,7 @@ export const CartContent: React.FC = () => {
                     </FC.ContentBox>
                     <FC.StyledP>Frete</FC.StyledP>
                     <FC.StyledP>Total</FC.StyledP>
-                    <FC.StyledButton>Seguir para o checkout</FC.StyledButton>
+                    <FC.StyledButton href="http://localhost:5173/checkout">Seguir para o checkout</FC.StyledButton>
                 </FC.StyledForm>
             </FC.ContentBox>
         </FC.Grid>

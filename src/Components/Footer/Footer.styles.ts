@@ -90,3 +90,13 @@ export const StyledButton = styled.button`
         cursor:pointer;
     }
 `
+
+export const StyledA = styled.a`
+    text-decoration:none;
+    font-size:0.83rem;
+    color:${props => props.theme.colors.DarkGray};
+
+    :hover { 
+        cursor:pointer;
+    }
+    `

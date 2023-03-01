@@ -3,6 +3,8 @@ import styled from 'styled-components';
 interface GridProps {
     gridArea?: string;
     gridSize?: string;
+    marginY?: string;
+    marginX?: string;
 
 }
 
@@ -17,12 +19,14 @@ export const Grid = styled.div<GridProps>`
 
 `
 
-export const ContentBox = styled.div`
+export const ContentBoxRow = styled.div`
 display:grid;
-grid-template-areas:
-"a . . . ."
-"b . . . ."
-"c d e f g";
+grid-template-rows:1fr;
+grid-gap: 10px;
+`
+export const ContentBoxCol = styled.div<GridProps>`
+display:grid;
+grid-template-columns:${props => props.gridSize || '1fr'};
 grid-gap: 10px;
 `
 
@@ -70,16 +74,16 @@ grid-area:${props => props.gridArea};
 export const StyledButton = styled.button`
 width: 120px;
 height:45px;
-background-color: ${props => props.theme.colors.LightPrimary};
-color: ${props => props.theme.colors.Primary};
+background-color: ${props => props.theme.colors.LightGray};
+color: ${props => props.theme.colors.DarkPrimary};
 justify-content:center;
 align-items:center;
-border: 2px solid;
+border: none;
 border-radius:5px;
 padding: 5px 10px;  
 display:flex;
 grid-area:b;
-margin-left:10px;
+margin:3px;
 
     :hover {
         cursor:pointer;
@@ -91,4 +95,37 @@ margin-left:10px;
 
 export const StyeledA = styled.a`
 text-decoration:none;
+`
+
+export const StyledDivForm = styled.div`
+display:flex;
+justify-content:space-between;
+`
+export const StyledForm = styled.form<GridProps>`
+grid-area:${props => props.gridArea};
+   background-color: ${props => props.theme.colors.LightPrimary};
+   border: solid 1px ${props => props.theme.colors.DarkPrimary};
+   border-radius: 5px;
+   padding:1px;
+   flex-direction:row;
+   display:flex;
+   justify-content:space-evenly;
+   text-align:left;
+   margin:1%;
+    `
+export const StyledInput = styled.input<GridProps>`
+    border:none;
+    border-radius:2px 0px 0px 2px;
+    padding:7px;
+    margin: ${props => props.marginY || '3px'} ${props => props.marginX || '3px'};
+    border-radius:2px;
+    :focus {
+        outline:none;
+    }
+`
+
+export const StyledP = styled.p`
+    color: ${props => props.theme.colors.LightPrimary};
+    text-align:start;
+    padding:10px;
 `

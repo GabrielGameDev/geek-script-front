@@ -20,7 +20,7 @@ export const Grid = styled.div`
     padding:5% 0%;
     text-align:center;
     align-items:center;
-    background-color: ${props => props.theme.colors.LightPrimary};
+    background-color: ${props => props.theme.colors.White};
 `
 
 export const ContentBox = styled.div<GridProps>`
@@ -60,7 +60,7 @@ export const StyledP = styled.p`
 `
 export const StyledForm = styled.form`
 
-   background-color: ${props => props.theme.colors.LightPrimary};
+   background-color: ${props => props.theme.colors.White};
    border: none;
    text-align:left;
    margin-bottom:1%;
@@ -79,13 +79,16 @@ export const StyledInput = styled.input`
     }
 `
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.a`
     background-color: ${props => props.theme.colors.Primary};
     border:none;
     width:100%;
     font-size:0.7rem;   
     padding:3%;
     color:${props => props.theme.colors.LightPrimary};
+    display:block;
+    text-align:center;
+    text-decoration:none;
 
     :hover {
         cursor: pointer;
