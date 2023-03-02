@@ -3,7 +3,7 @@ import api from "../config";
 export interface Product {
     name: string;
     photo: string;
-    category_id: string;
+    category_id: number;
     price: number;
     description: string;
 }

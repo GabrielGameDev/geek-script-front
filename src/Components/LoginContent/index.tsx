@@ -40,13 +40,13 @@ export const LoginContent: React.FC = () => {
           getUser(response.data.id).then((response) => {
             console.log(response.data);
             localStorage.setItem("user", JSON.stringify(response.data));
+            console.log(response.data.scope);
+            if (response.data.scope === "admin") {
+              window.location.href = "/adm";
+            } else {
+              window.location.href = "/";
+            }
           });
-
-          if (response.data.scope === "admin") {
-            window.location.href = "/adm";
-          } else {
-            window.location.href = "/";
-          }
         }
       })
       .catch((error) => {
