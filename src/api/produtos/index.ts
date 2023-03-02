@@ -9,7 +9,7 @@ export interface Product {
 }
 
 export async function getProducts() {
-    return api.get("/product");
+    return api.get("/product/catalog");
 }
 
 export async function getProduct(id: string) {
@@ -17,13 +17,13 @@ export async function getProduct(id: string) {
 }
 
 export async function createProduct(product: Product) {
-    return api.post("/product", product);
+    return api.post("/product/admin", product);
 }
 
 export async function updateProduct(id: string, product: Product) {
-    return api.put(`/product/${id}`, product);
+    return api.put(`/product/admin/${id}`, product);
 }
 
 export async function deleteProduct(id: string) {
-    return api.delete(`/product/${id}`);
+    return api.delete(`/product/admin/${id}`);
 }
