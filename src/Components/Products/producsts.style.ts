@@ -12,11 +12,14 @@ export const StoreDescription = styled.div`
     padding: 40px 10%;
     width: 100%;
 
-    div{
-        width: 50%;
-        
-    }
-
+  
+`
+export const StyledDiv =styled.div`
+    width:50%;
+@media (max-width:810px) {
+    width:100%;
+    display:block;
+}
 `
 
 export const Main = styled.main`
@@ -50,6 +53,11 @@ export const FilterButton = styled.button<FilterButtonProps>`
         color: ${theme.colors.White};
         cursor: pointer;
     }
+
+    @media (max-width: 810px) {
+        padding: 0.2rem 1.5rem;
+        height:30%;
+    }
 `
 
 export const FilterSelectDiv = styled.div`
@@ -71,6 +79,7 @@ export const Select = styled.select`
 
 padding: 1rem 1rem;
 text-align: right;
+
 
 `
 

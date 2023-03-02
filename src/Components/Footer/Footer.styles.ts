@@ -12,14 +12,21 @@ display:grid;
 grid-template-columns: 2fr repeat(3, 1fr);
 grid-gap: 5px; 
 font-size: 0.85rem;
+
+@media (max-width: 809px){
+display:block;
+
+} ;
 `
 
 
 export const ContentBox = styled.div`
     grid-gap: 5px; 
     padding: 0.25rem;
-  @media (max-width: 550px) {
+  @media (max-width: 809px) {
     flex-direction: column; 
+    text-align:center;
+    font-size:0.6rem;
   }
   `
 
@@ -71,9 +78,11 @@ export const StyledInput = styled.input`
     padding:7px;
     :focus {
         outline:none;
+    };
+    @media (max-width: 809px){
+    font-size:0.6rem;
+
     }
-    
-    
     `
 
 export const StyledButton = styled.button`
