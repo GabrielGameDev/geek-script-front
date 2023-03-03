@@ -58,6 +58,10 @@ export const AdmProdutos: React.FC = () => {
       });
   }
 
+  function handleUpdate(id: number) {
+    window.location.href = `/update/${id}`;
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     if (!productName || !category || !price || !description) {
@@ -153,12 +157,12 @@ export const AdmProdutos: React.FC = () => {
               <FC.StyledP>{product.id_product}</FC.StyledP>
               <FC.StyledP>{product.price}</FC.StyledP>
               <FC.StyledP>{product.stock}</FC.StyledP>
-              <FC.StyledButton>Editar</FC.StyledButton>
-              <FC.StyledButton
-                onClick={() => handleDeleteProduct(product.id_product)}
-              >
+              <button onClick={() => handleUpdate(product.id_product)}>
+                Editar
+              </button>
+              <button onClick={() => handleDeleteProduct(product.id_product)}>
                 Excluir
-              </FC.StyledButton>
+              </button>
             </FC.ContentBoxCol>
           );
         })}
