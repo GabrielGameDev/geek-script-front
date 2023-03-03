@@ -1,7 +1,8 @@
-import {ThemeProvider} from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import { AdmProdutos } from '../../Components/AdmPanel/produtos'
 import { AdmPedidos } from '../../Components/AdmPanel/pedidos'
 import { AdmUsuarios } from '../../Components/AdmPanel/usuarios'
+import { AdmCategorias } from '../../Components/AdmPanel/Categorias'
 import { Footer } from '../../Components/Footer'
 import { Header } from '../../Components/Header'
 import { theme } from '../../Components/Theme/Theme'
@@ -17,7 +18,7 @@ export function AdmProducts() {
     </ThemeProvider>
   )
 
-  
+
 }
 export function AdmUsers() {
   return (
@@ -29,7 +30,7 @@ export function AdmUsers() {
     </ThemeProvider>
   )
 
-  
+
 }
 export function AdmOrders() {
   return (
@@ -41,7 +42,19 @@ export function AdmOrders() {
     </ThemeProvider>
   )
 
-  
+
+}
+export function AdmCategories() {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Header />
+      <AdmCategorias />
+      <Footer />
+    </ThemeProvider>
+  )
+
+
 }
 
 

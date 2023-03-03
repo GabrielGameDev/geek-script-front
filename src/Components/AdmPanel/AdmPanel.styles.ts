@@ -12,7 +12,7 @@ export const Grid = styled.div<GridProps>`
     height:fit-content;
     display: grid;
     grid-template-columns: ${props => props.gridSize || '1fr 4fr'};
-
+    padding-bottom:2%;
     text-align:center;
     align-items:center;
     background-color: ${props => props.theme.colors.Primary};
@@ -102,7 +102,6 @@ display:flex;
 justify-content:space-between;
 `
 export const StyledForm = styled.form<GridProps>`
-grid-area:${props => props.gridArea};
    background-color: ${props => props.theme.colors.LightPrimary};
    border: solid 1px ${props => props.theme.colors.DarkPrimary};
    border-radius: 5px;
@@ -119,6 +118,8 @@ export const StyledInput = styled.input<GridProps>`
     padding:7px;
     margin: ${props => props.marginY || '3px'} ${props => props.marginX || '3px'};
     border-radius:2px;
+    width:100%;
+
     :focus {
         outline:none;
     }
@@ -127,5 +128,5 @@ export const StyledInput = styled.input<GridProps>`
 export const StyledP = styled.p`
     color: ${props => props.theme.colors.LightPrimary};
     text-align:start;
-    padding:10px;
+    padding-left:10px;
 `

@@ -4,7 +4,7 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import { Cart } from "./pages/Cart";
-import { AdmOrders, AdmProducts, AdmUsers } from "./pages/AdmPanel";
+import { AdmCategories, AdmOrders, AdmProducts, AdmUsers } from "./pages/AdmPanel";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import Products from "./pages/products";
@@ -26,6 +26,7 @@ export function Routes() {
         <Route path="/adm" element={<AdmProducts />} />
         <Route path="/adm/users" element={<AdmUsers />} />
         <Route path="/adm/pedidos" element={<AdmOrders />} />
+        <Route path="/adm/categorias" element={<AdmCategories />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<CheckoutCart />} />
         <Route path="/sucesso" element={<SucessCheck />} />

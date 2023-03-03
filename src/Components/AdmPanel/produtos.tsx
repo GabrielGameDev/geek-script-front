@@ -1,14 +1,11 @@
 import React from "react";
 import * as FC from './AdmPanel.styles'
+import { MenuLateral } from "./MenuLateral";
 
 export const AdmProdutos: React.FC = () => {
     return (
         <FC.Grid>
-            <FC.StyledUl>
-                <FC.StyeledA href="http://localhost:5173/adm"><FC.StyledLi>Produtos</FC.StyledLi></FC.StyeledA>
-                <FC.StyeledA href="http://localhost:5173/adm/users"><FC.StyledLi>Usuários</FC.StyledLi></FC.StyeledA>
-                <FC.StyeledA href="http://localhost:5173/adm/pedidos"><FC.StyledLi>Pedidos</FC.StyledLi></FC.StyeledA>
-            </FC.StyledUl>
+            <MenuLateral />
             <FC.ContentBoxRow>
                 <div> <FC.StyledH1>Painel Administrativo</FC.StyledH1></div>
                 <FC.StyledForm >
