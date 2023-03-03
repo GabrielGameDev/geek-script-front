@@ -8,6 +8,7 @@ import {
   deleteProduct,
   updateProduct,
 } from "../../api/produtos";
+import { MenuLateral } from "./MenuLateral";
 
 export const AdmProdutos: React.FC = () => {
   const [products, setProducts] = useState([]);
@@ -99,17 +100,7 @@ export const AdmProdutos: React.FC = () => {
 
   return (
     <FC.Grid>
-      <FC.StyledUl>
-        <FC.StyeledA href="http://localhost:5173/adm">
-          <FC.StyledLi>Produtos</FC.StyledLi>
-        </FC.StyeledA>
-        <FC.StyeledA href="http://localhost:5173/adm/users">
-          <FC.StyledLi>Usuários</FC.StyledLi>
-        </FC.StyeledA>
-        <FC.StyeledA href="http://localhost:5173/adm/pedidos">
-          <FC.StyledLi>Pedidos</FC.StyledLi>
-        </FC.StyeledA>
-      </FC.StyledUl>
+        <MenuLateral />
       <FC.ContentBoxRow>
         <div>
           {" "}

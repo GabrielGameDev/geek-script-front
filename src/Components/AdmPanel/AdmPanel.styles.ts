@@ -36,6 +36,7 @@ margin:0px;
 padding:10px;
 border:solid 1px ${props => props.theme.colors.LightPrimary};
 background-color: ${props => props.theme.colors.LightPrimary};
+height:100%;
 
 `
 
