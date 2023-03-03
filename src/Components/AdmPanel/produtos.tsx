@@ -2,8 +2,12 @@ import React from "react";
 import * as FC from "./AdmPanel.styles";
 import { getProducts } from "../../api/produtos";
 import { useEffect, useState } from "react";
-import { createProduct } from "../../api/produtos";
-import { Product } from "../../api/produtos";
+import {
+  Product,
+  createProduct,
+  deleteProduct,
+  updateProduct,
+} from "../../api/produtos";
 
 export const AdmProdutos: React.FC = () => {
   const [products, setProducts] = useState([]);
@@ -38,6 +42,22 @@ export const AdmProdutos: React.FC = () => {
     setPhoto(photo);
   };
 
+  function handleDeleteProduct(id: number) {
+    deleteProduct(id)
+      .then((response) => {
+        console.log(response);
+        if (response.status === 204) {
+          window.alert(`Produto ${productName} deletado com sucesso!`);
+          console.log(response.data);
+          window.location.reload();
+        }
+      })
+      .catch((error) => {
+        window.alert("Erro ao deletar produto!" + error);
+        console.log(error);
+      });
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     if (!productName || !category || !price || !description) {
@@ -54,9 +74,11 @@ export const AdmProdutos: React.FC = () => {
     console.log(product);
     createProduct(product)
       .then((response) => {
-        if (response.status === 200) {
+        console.log(response);
+        if (response.status === 201) {
           window.alert(`Produto ${productName} cadastrado com sucesso!`);
           console.log(response.data);
+          window.location.reload();
         }
       })
       .catch((error) => {
@@ -131,6 +153,12 @@ export const AdmProdutos: React.FC = () => {
               <FC.StyledP>{product.id_product}</FC.StyledP>
               <FC.StyledP>{product.price}</FC.StyledP>
               <FC.StyledP>{product.stock}</FC.StyledP>
+              <FC.StyledButton>Editar</FC.StyledButton>
+              <FC.StyledButton
+                onClick={() => handleDeleteProduct(product.id_product)}
+              >
+                Excluir
+              </FC.StyledButton>
             </FC.ContentBoxCol>
           );
         })}

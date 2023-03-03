@@ -20,10 +20,10 @@ export async function createProduct(product: Product) {
     return api.post("/product/admin", product);
 }
 
-export async function updateProduct(id: string, product: Product) {
+export async function updateProduct(id: Number, product: Product) {
     return api.put(`/product/admin/${id}`, product);
 }
 
-export async function deleteProduct(id: string) {
+export async function deleteProduct(id: Number) {
     return api.delete(`/product/admin/${id}`);
 }
