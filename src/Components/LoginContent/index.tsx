@@ -35,10 +35,18 @@ export const LoginContent: React.FC = () => {
         if (response.status === 200) {
           window.alert(`Usuário ${email} logado com sucesso!`);
           console.log(response.data);
-          localStorage.setItem("token", response.data);
-          //   getUser("3").then((response) => {
-          //     console.log(response.data);
-          //   });
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("id", response.data.id);
+          getUser(response.data.id).then((response) => {
+            console.log(response.data);
+            localStorage.setItem("user", JSON.stringify(response.data));
+            console.log(response.data.scope);
+            if (response.data.scope === "admin") {
+              window.location.href = "/adm";
+            } else {
+              window.location.href = "/";
+            }
+          });
         }
       })
       .catch((error) => {
@@ -58,7 +66,8 @@ export const LoginContent: React.FC = () => {
             onChange={handleEmailChange}
           ></FC.StyledInput>
           <FC.StyledInput
-            placeholder="Senha" type='password'
+            placeholder="Senha"
+            type="password"
             onChange={handlePasswordChange}
           ></FC.StyledInput>
           <FC.StyledButton onClick={handleSubmit}>Login</FC.StyledButton>

@@ -28,7 +28,6 @@ export default function ProductsComponent() {
 
   function handleShowMore() {
     setCurrentPage(currentPage + 1);
-    setShownProducts(products.slice(0, currentPage * 8));
   }
 
   useEffect(() => {
@@ -39,8 +38,14 @@ export default function ProductsComponent() {
   }, []);
 
   useEffect(() => {
-    setShownProducts(products.slice(0, 8));
-  }, [products]);
+    setShownProducts(products.slice(0, currentPage * 8));
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
+    }, 1000);
+  }, [products, currentPage]);
 
   return (
     <>

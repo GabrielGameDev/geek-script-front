@@ -5,7 +5,7 @@ export async function createCategory(name: string) {
 }
 
 export async function getCategories() {
-    return api.get("/category");
+    return api.get("/category/catalog");
 }
 
 export async function getCategory(id: string) {

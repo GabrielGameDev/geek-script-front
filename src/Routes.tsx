@@ -14,6 +14,7 @@ import Cadastro from "./pages/Cadastro";
 import { SucessCheck } from "./pages/Sucesso";
 import { Profile } from "./pages/Profile";
 import { UserOrders } from "./pages/UserPanel";
+import UpdateProduct from "./pages/UpdateProduct";
 
 export function Routes() {
   return (
@@ -33,6 +34,7 @@ export function Routes() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/perfil" element={<Profile />} />
         <Route path="/pedidos" element={<UserOrders />} />
+        <Route path="/update/:id" element={<UpdateProduct />} />
       </WrapperRoutes>
     </BrowserRouter>
   );

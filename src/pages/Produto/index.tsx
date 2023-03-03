@@ -12,6 +12,17 @@ export default function Produto() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
 
+  function AddToCart() {
+    const cartItems = localStorage.getItem("cart");
+    let cart = [];
+    if (cartItems) {
+      cart = JSON.parse(cartItems);
+    }
+    cart.push(id);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log(cart);
+  }
+
   useEffect(() => {
     getProduct(id).then((response) => {
       console.log(response.data);
@@ -46,7 +57,7 @@ export default function Produto() {
             </style.SizeDiv>
 
             <div>
-              <style.AddToCart>
+              <style.AddToCart onClick={AddToCart}>
                 Adicionar ao carrinho - {product.price}
               </style.AddToCart>
             </div>
