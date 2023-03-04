@@ -132,7 +132,7 @@ export const AdmProdutos: React.FC = () => {
             Adicionar Produto
           </FC.StyledButton>
         </FC.StyledForm>
-        <FC.ContentBoxCol gridSize="repeat(5, 1fr)">
+        <FC.ContentBoxCol gridSize="repeat(6, 1fr)">
           <FC.StyledH4>Produto</FC.StyledH4>
           <FC.StyledH4>Categoria</FC.StyledH4>
           <FC.StyledH4>ID</FC.StyledH4>
@@ -142,7 +142,7 @@ export const AdmProdutos: React.FC = () => {
 
         {products.map((product: any) => {
           return (
-            <FC.ContentBoxCol gridSize="repeat(5, 1fr)">
+            <FC.ContentBoxCol gridSize="repeat(6, 1fr)">
               <FC.StyledP>{product.name}</FC.StyledP>
               <FC.StyledP>{product.category_id}</FC.StyledP>
               <FC.StyledP>{product.id_product}</FC.StyledP>

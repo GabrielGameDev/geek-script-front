@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 interface GridProps {
-    gridArea?: string;
     gridSize?: string;
+    rowSize?: string;
     marginY?: string;
     marginX?: string;
+    butWidth?: string;
+    butHeight?: string;
 
 }
 
@@ -19,15 +21,15 @@ export const Grid = styled.div<GridProps>`
 
 `
 
-export const ContentBoxRow = styled.div`
+export const ContentBoxRow = styled.div<GridProps>`
 display:grid;
-grid-template-rows:1fr;
-grid-gap: 10px;
+grid-template-rows:${props => props.rowSize || '1fr'}r;
 `
 export const ContentBoxCol = styled.div<GridProps>`
 display:grid;
 grid-template-columns:${props => props.gridSize || '1fr'};
 grid-gap: 10px;
+border-bottom:solid 1px white;
 `
 
 export const StyledUl = styled.ul`
@@ -67,14 +69,13 @@ grid-area:a;
 export const StyledH4 = styled.h4<GridProps>`
     color: ${props => props.theme.colors.Accent};
 text-align:start;
-padding:10px;
-grid-area:${props => props.gridArea};
+padding-left:10px;
 
 `
 
-export const StyledButton = styled.button`
-width: 120px;
-height:45px;
+export const StyledButton = styled.button<GridProps>`
+width: ${props => props.butWidth || '120px'} ;
+height:${props => props.butHeight || '45px'};
 background-color: ${props => props.theme.colors.LightGray};
 color: ${props => props.theme.colors.DarkPrimary};
 justify-content:center;
@@ -130,4 +131,7 @@ export const StyledP = styled.p`
     color: ${props => props.theme.colors.LightPrimary};
     text-align:start;
     padding-left:10px;
+    display:flex;
+    align-items:center;
+    
 `
