@@ -47,11 +47,11 @@ export const Header: React.FC = () => {
         </FC.HeaderLinks>
 
         {user.id ? (
-          <FC.HeaderLinks href="http://localhost:5173/profile">
+          <FC.HeaderLinks href="/profile">
             {`Olá, ${user.name}`}
           </FC.HeaderLinks>
         ) : (
-          <FC.HeaderLinks href="http://localhost:5173/login">
+          <FC.HeaderLinks href="/login">
             Login
           </FC.HeaderLinks>
         )}
