@@ -93,7 +93,27 @@ export const ProductsContainer = styled.div`
 
     
 `
+export const ShowMoreButton = styled.button`
 
+    margin: 1rem;
+    background-color: ${theme.colors.Primary};
+    color: ${theme.colors.White};
+    padding: 1rem 3rem;
+    height: 70%;
+    transition: 0.3s;
+    border:none;
+    border-radius:0.3rem;
+    :hover{
+        background-color: ${theme.colors.Accent};
+        color: ${theme.colors.White};
+        cursor: pointer;
+    }
+
+    @media (max-width: 810px) {
+        padding: 0.2rem 1.5rem;
+        height:30%;
+    }
+`
 
 
 

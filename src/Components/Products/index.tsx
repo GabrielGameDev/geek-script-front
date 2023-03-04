@@ -11,6 +11,7 @@ import {
   Select,
   ProductsContainer,
   StyledDiv,
+  ShowMoreButton,
 } from "./producsts.style";
 import ProductCard from "../../Components/ProductCard";
 
@@ -28,6 +29,25 @@ export default function ProductsComponent() {
 
   function handleShowMore() {
     setCurrentPage(currentPage + 1);
+  }
+
+  function handleSort(event) {
+    const { value } = event.target;
+    let sortedProducts = [];
+    switch (value) {
+      case "filter1":
+        sortedProducts = [...products].sort((a, b) => a.id - b.id);
+        break;
+      case "filter2":
+        sortedProducts = [...products].sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
+        break;
+      case "filter3":
+        sortedProducts = [...products].sort((a, b) => a.price - b.price);
+        break;
+    }
+    setShownProducts(sortedProducts);
   }
 
   useEffect(() => {
@@ -72,37 +92,37 @@ export default function ProductsComponent() {
               Todos
             </FilterButton>
             <FilterButton
-              selected={selectedButton === "Action Figure" ? true : false}
-              onClick={() => handleFilterButton("Action Figure")}
-            >
-              Action Figure
-            </FilterButton>
-            <FilterButton
               selected={selectedButton === "Camisetas" ? true : false}
               onClick={() => handleFilterButton("Camisetas")}
             >
               Camisetas
             </FilterButton>
             <FilterButton
-              selected={selectedButton === "Canecas" ? true : false}
-              onClick={() => handleFilterButton("Canecas")}
+              selected={selectedButton === "Funkos" ? true : false}
+              onClick={() => handleFilterButton("Funkos")}
             >
-              Canecas
+              Funkos
             </FilterButton>
             <FilterButton
-              selected={selectedButton === "Chaveiros" ? true : false}
-              onClick={() => handleFilterButton("Chaveiros")}
+              selected={selectedButton === "Action Figures" ? true : false}
+              onClick={() => handleFilterButton("Action Figures")}
             >
-              Chaveiros
+              Action Figures
+            </FilterButton>
+            <FilterButton
+              selected={selectedButton === "Games" ? true : false}
+              onClick={() => handleFilterButton("Games")}
+            >
+              Games
             </FilterButton>
           </StyledDiv>
 
           <FilterSelectDiv>
-            <span>Sort by</span>
-            <Select name="filters" id="filters">
-              <option value="filter1">Filter 1</option>
-              <option value="filter2">Filter 2</option>
-              <option value="filter3">Filter 3</option>
+            <span>Ordenar por</span>
+            <Select name="filters" id="filters" onChange={handleSort}>
+              <option value="filter1">Padrão</option>
+              <option value="filter2">A-Z</option>
+              <option value="filter3">Menor preço</option>
             </Select>
             <p>
               Mostrando 1-{shownProducts.length} de {products.length} resultados
@@ -123,7 +143,7 @@ export default function ProductsComponent() {
           })}
         </ProductsContainer>
         <div>
-          <button onClick={handleShowMore}>Mostrar mais</button>
+          <ShowMoreButton onClick={handleShowMore}>Mostrar mais</ShowMoreButton>
         </div>
       </Main>
     </>

@@ -33,17 +33,15 @@ export const Header: React.FC = () => {
   return (
     <FC.HeaderDiv>
       <div>
-        <FC.HeaderLinks href="http://localhost:5173/">
+        <FC.HeaderLinks href="/">
           <FC.HeaderImage width={60} src={logoGeek}></FC.HeaderImage>
         </FC.HeaderLinks>
-        <FC.HeaderLinks href="http://localhost:5173/products">
-          Shop
-        </FC.HeaderLinks>
+        <FC.HeaderLinks href="/products">Shop</FC.HeaderLinks>
         <FC.HeaderLinks href="#">Stories</FC.HeaderLinks>
         <FC.HeaderLinks href="#">About</FC.HeaderLinks>
       </div>
       <div>
-        <FC.HeaderLinks href="http://localhost:5173/cart#">
+        <FC.HeaderLinks href="/cart">
           <FC.Counter>0</FC.Counter>
           <FC.HeaderImage src={iconCart} width={17}></FC.HeaderImage>
         </FC.HeaderLinks>
