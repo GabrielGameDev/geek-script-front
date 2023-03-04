@@ -83,7 +83,7 @@ export const LoginContent: React.FC = () => {
             <FC.StyledLink>Esqueceu a senha ?</FC.StyledLink>
           </FC.StyledDivForm>
         </FC.StyledForm>
-        <FC.StyledLink colorLink="Gray">ou crie uma conta</FC.StyledLink>
+        <FC.StyledLink colorLink="LightGray" href="/cadastro" >ou crie uma conta</FC.StyledLink>
       </FC.StyledDiv>
     </FC.Grid>
   );

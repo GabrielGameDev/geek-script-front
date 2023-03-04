@@ -1,6 +1,5 @@
 import React from "react";
 import * as FC from '../LoginContent/LoginContent.styles'
-import * as CC from '../Cart/Cart.styles'
 import { createUser, User } from "../../api/user";
 import { useState } from "react";
 
