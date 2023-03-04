@@ -1,5 +1,6 @@
 import React from "react";
 import * as FC from './AdmPanel.styles'
+import { ButtonEditar, ButtonExcluir } from "./Buttons";
 import { MenuLateral } from "./MenuLateral";
 
 export const AdmPedidos: React.FC = () => {
@@ -32,57 +33,8 @@ export const AdmPedidos: React.FC = () => {
                     <FC.StyledP>Itens</FC.StyledP>
                     <FC.StyledP>Quantidade</FC.StyledP>
                     <div>
-                        <FC.ContentBoxRow rowSize="0.5fr">
-                            <FC.StyledButton butHeight="20px" butWidth="80px">Excluir</FC.StyledButton>
-                        </FC.ContentBoxRow>
-                        <FC.ContentBoxRow rowSize="0.5fr">
-                            <FC.StyledButton butHeight="20px" butWidth="80px">Editar</FC.StyledButton>
-                        </FC.ContentBoxRow>
-                    </div>
-                </FC.ContentBoxCol>
-                <FC.ContentBoxCol gridSize="repeat(6, 1fr)">
-                    <FC.StyledP>Número do pedido</FC.StyledP>
-                    <FC.StyledP>Cliente</FC.StyledP>
-                    <FC.StyledP>Valor</FC.StyledP>
-                    <FC.StyledP>Itens</FC.StyledP>
-                    <FC.StyledP>Quantidade</FC.StyledP>
-                    <div>
-                        <FC.ContentBoxRow rowSize="0.5fr">
-                            <FC.StyledButton butHeight="20px" butWidth="80px">Excluir</FC.StyledButton>
-                        </FC.ContentBoxRow>
-                        <FC.ContentBoxRow rowSize="0.5fr">
-                            <FC.StyledButton butHeight="20px" butWidth="80px">Editar</FC.StyledButton>
-                        </FC.ContentBoxRow>
-                    </div>
-                </FC.ContentBoxCol>
-                <FC.ContentBoxCol gridSize="repeat(6, 1fr)">
-                    <FC.StyledP>Número do pedido</FC.StyledP>
-                    <FC.StyledP>Cliente</FC.StyledP>
-                    <FC.StyledP>Valor</FC.StyledP>
-                    <FC.StyledP>Itens</FC.StyledP>
-                    <FC.StyledP>Quantidade</FC.StyledP>
-                    <div>
-                        <FC.ContentBoxRow rowSize="0.5fr">
-                            <FC.StyledButton butHeight="20px" butWidth="80px">Excluir</FC.StyledButton>
-                        </FC.ContentBoxRow>
-                        <FC.ContentBoxRow rowSize="0.5fr">
-                            <FC.StyledButton butHeight="20px" butWidth="80px">Editar</FC.StyledButton>
-                        </FC.ContentBoxRow>
-                    </div>
-                </FC.ContentBoxCol>
-                <FC.ContentBoxCol gridSize="repeat(6, 1fr)">
-                    <FC.StyledP>Número do pedido</FC.StyledP>
-                    <FC.StyledP>Cliente</FC.StyledP>
-                    <FC.StyledP>Valor</FC.StyledP>
-                    <FC.StyledP>Itens</FC.StyledP>
-                    <FC.StyledP>Quantidade</FC.StyledP>
-                    <div>
-                        <FC.ContentBoxRow rowSize="0.5fr">
-                            <FC.StyledButton butHeight="20px" butWidth="80px">Excluir</FC.StyledButton>
-                        </FC.ContentBoxRow>
-                        <FC.ContentBoxRow rowSize="0.5fr">
-                            <FC.StyledButton butHeight="20px" butWidth="80px">Editar</FC.StyledButton>
-                        </FC.ContentBoxRow>
+                        <ButtonEditar />
+                        <ButtonExcluir />
                     </div>
                 </FC.ContentBoxCol>
             </FC.ContentBoxRow>
