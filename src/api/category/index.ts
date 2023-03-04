@@ -1,7 +1,7 @@
 import api from "../config";
 
 export async function createCategory(name: string) {
-    return api.post("/category", { name });
+    return api.post("/category/admin", { name });
 }
 
 export async function getCategories() {
@@ -13,9 +13,9 @@ export async function getCategory(id: string) {
 }
 
 export async function updateCategory(id: string, name: string) {
-    return api.put(`/category/${id}`, { name });
+    return api.put(`/category/admin/${id}`, { name });
 }
 
 export async function deleteCategory(id: string) {
-    return api.delete(`/category/${id}`);
+    return api.delete(`/category/admin/${id}`);
 }

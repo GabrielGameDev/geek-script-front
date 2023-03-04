@@ -39,23 +39,28 @@ export default function Produto() {
       <Main>
         <style.Section>
           <style.Images>
-            <img src={product.photo} alt="" />
-            <img src="../../../Images/imageTeste.jpg" alt="" />
-            <img src="../../../Images/imageTeste.jpg" alt="" />
-            <img src="../../../Images/imageTeste.jpg" alt="" />
+            {Array.from({ length: 4 }).map(() => (
+              <img src={product.photo} alt="" />
+            ))}
           </style.Images>
           <style.ProductInfo>
             <h1>{product.name}</h1>
             <h2>R${product.price}</h2>
             <p>{product.description}</p>
 
-            <p>Tamanho</p>
-            <style.SizeDiv>
-              <style.SizeButton>P</style.SizeButton>
-              <style.SizeButton>M</style.SizeButton>
-              <style.SizeButton>G</style.SizeButton>
-              <style.SizeButton>GG</style.SizeButton>
-            </style.SizeDiv>
+            {product.category_id === 4 ? (
+              <>
+                <p>Tamanho</p>
+                <style.SizeDiv>
+                  <style.SizeButton>P</style.SizeButton>
+                  <style.SizeButton>M</style.SizeButton>
+                  <style.SizeButton>G</style.SizeButton>
+                  <style.SizeButton>GG</style.SizeButton>
+                </style.SizeDiv>
+              </>
+            ) : (
+              <></>
+            )}
 
             <div>
               <style.AddToCart onClick={AddToCart}>
