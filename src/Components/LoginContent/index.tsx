@@ -8,6 +8,7 @@ import { getUser } from "../../api/user";
 export const LoginContent: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [logando, setLogando] = useState(false);
 
   function handleEmailChange(event) {
     const email = event.target.value;
@@ -21,6 +22,7 @@ export const LoginContent: React.FC = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
+    setLogando(true);
     if (!email || !password) {
       window.alert("Preencha todos os campos!");
       return;
@@ -33,7 +35,6 @@ export const LoginContent: React.FC = () => {
     login(email, password)
       .then((response) => {
         if (response.status === 200) {
-          window.alert(`Usuário ${email} logado com sucesso!`);
           console.log(response.data);
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("id", response.data.id);
@@ -41,6 +42,7 @@ export const LoginContent: React.FC = () => {
             console.log(response.data);
             localStorage.setItem("user", JSON.stringify(response.data));
             console.log(response.data.scope);
+            window.alert(`Usuário ${email} logado com sucesso!`);
             if (response.data.scope === "admin") {
               window.location.href = "/adm";
             } else {
@@ -70,7 +72,9 @@ export const LoginContent: React.FC = () => {
             type="password"
             onChange={handlePasswordChange}
           ></FC.StyledInput>
-          <FC.StyledButton onClick={handleSubmit}>Login</FC.StyledButton>
+          <FC.StyledButton onClick={handleSubmit} disabled={logando}>
+            Login
+          </FC.StyledButton>
           <FC.StyledDivForm>
             <FC.StyledLabel>
               <FC.StyledInput marginX="0px" type="checkbox"></FC.StyledInput>{" "}

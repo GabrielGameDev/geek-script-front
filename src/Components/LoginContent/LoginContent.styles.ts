@@ -91,11 +91,19 @@ display:flex;
 text-decoration:none;
 font-weight:bold;
 
+    
     :hover {
         cursor:pointer;
         color:${props => props.theme.colors.LightPrimary};
         font-weight:bold;
         background-color:${props => props.theme.colors.DarkPrimary};
+    }
+
+    :disabled {
+        cursor:not-allowed;
+        color:${props => props.theme.colors.DarkPrimary};
+        font-weight:bold;
+        background-color:${props => props.theme.colors.LightGray};
     }
 
 `

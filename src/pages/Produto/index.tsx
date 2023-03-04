@@ -48,6 +48,7 @@ export default function Produto() {
             <h1>{product.name}</h1>
             <h2>R${product.price}</h2>
             <p>{product.description}</p>
+
             <p>Tamanho</p>
             <style.SizeDiv>
               <style.SizeButton>P</style.SizeButton>
