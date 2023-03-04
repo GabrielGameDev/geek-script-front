@@ -38,7 +38,7 @@ width:100%;
 
 export const Content1 = styled.div`
 justify-content:center;
-align-items:center;
+align-items:flex-start;
 display:flex;
 `
 export const Content2 = styled(Content1)`
@@ -48,7 +48,9 @@ export const Content2 = styled(Content1)`
 export const MainImage = styled.img` 
 margin-bottom:20px;
 width: 50%;
+height: 50%;
 border-radius:20px;
+object-fit: cover;
 
 @media (max-height:550) {
   width:30%;
