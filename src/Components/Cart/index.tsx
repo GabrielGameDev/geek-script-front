@@ -71,10 +71,10 @@ export const CartContent: React.FC = () => {
             width="180px"
           >
             <FC.StyledP>Subtotal</FC.StyledP>
-            <FC.StyledP>R${totalPrice}</FC.StyledP>
+            <FC.StyledP>R${totalPrice.toFixed(2)}</FC.StyledP>
           </FC.ContentBox>
           <FC.StyledP>Frete: Grátis</FC.StyledP>
-          <FC.StyledP>Total: R${totalPrice}</FC.StyledP>
+          <FC.StyledP>Total: R${totalPrice.toFixed(2)}</FC.StyledP>
           <FC.StyledButton href="http://localhost:5173/checkout">
             Seguir para o checkout
           </FC.StyledButton>

@@ -15,6 +15,8 @@ export const Header: React.FC = () => {
     isAdm: "",
   });
 
+  const [counter, setCounter] = useState(0);
+
   const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
     const newUser = localStorage.getItem("user");
@@ -32,6 +34,11 @@ export const Header: React.FC = () => {
       }
       console.log(user);
     }
+
+    const cartItems = localStorage.getItem("cart");
+    if (cartItems) {
+      setCounter(JSON.parse(cartItems).length);
+    }
   }, []);
 
   return (
@@ -46,7 +53,7 @@ export const Header: React.FC = () => {
       </div>
       <div>
         <FC.HeaderLinks href="/cart">
-          <FC.Counter>0</FC.Counter>
+          <FC.Counter>{counter}</FC.Counter>
           <FC.HeaderImage src={iconCart} width={17}></FC.HeaderImage>
         </FC.HeaderLinks>
 

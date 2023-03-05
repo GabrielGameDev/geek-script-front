@@ -21,6 +21,7 @@ export default function Produto() {
     cart.push(id);
     localStorage.setItem("cart", JSON.stringify(cart));
     console.log(cart);
+    window.location.href = "/cart";
   }
 
   useEffect(() => {
@@ -64,7 +65,7 @@ export default function Produto() {
 
             <div>
               <style.AddToCart onClick={AddToCart}>
-                Adicionar ao carrinho - {product.price}
+                Adicionar ao carrinho - R${product.price}
               </style.AddToCart>
             </div>
           </style.ProductInfo>
