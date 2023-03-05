@@ -15,6 +15,7 @@ export const Header: React.FC = () => {
     isAdm: "",
   });
 
+  const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
     const newUser = localStorage.getItem("user");
 
@@ -26,6 +27,9 @@ export const Header: React.FC = () => {
         password: JSON.parse(newUser).password,
         isAdm: JSON.parse(newUser).scope,
       });
+      if (JSON.parse(newUser).scope === "admin") {
+        setIsAdmin(true);
+      }
       console.log(user);
     }
   }, []);
@@ -47,13 +51,11 @@ export const Header: React.FC = () => {
         </FC.HeaderLinks>
 
         {user.id ? (
-          <FC.HeaderLinks href="/profile">
-            {`Olá, ${user.name}`}
-          </FC.HeaderLinks>
+          <FC.HeaderLinks
+            href={isAdmin ? "/adm" : "/perfil"}
+          >{`Olá, ${user.name}`}</FC.HeaderLinks>
         ) : (
-          <FC.HeaderLinks href="/login">
-            Login
-          </FC.HeaderLinks>
+          <FC.HeaderLinks href="/login">Login</FC.HeaderLinks>
         )}
       </div>
     </FC.HeaderDiv>
