@@ -37,7 +37,9 @@ export const MainContent: React.FC = () => {
 
         <FC.Content2>
           {" "}
-          <FC.MainImage src={product.photo} />{" "}
+          <FC.ImageLink href="/products/1">
+          <FC.MainImage src={product.photo} alt="Imagem Produto 1" />{" "}
+          </FC.ImageLink>
         </FC.Content2>
       </FC.Grid>
     </div>

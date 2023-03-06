@@ -30,15 +30,24 @@ export const Header: React.FC = () => {
     }
   }, []);
 
+  const [open, setOpen] = useState<FC.IHeader>(false)
+
   return (
     <FC.HeaderDiv>
       <div>
-        <FC.HeaderLinks href="/">
-          <FC.HeaderImage width={60} src={logoGeek}></FC.HeaderImage>
-        </FC.HeaderLinks>
-        <FC.HeaderLinks href="/products">Shop</FC.HeaderLinks>
-        <FC.HeaderLinks href="#">Stories</FC.HeaderLinks>
-        <FC.HeaderLinks href="#">About</FC.HeaderLinks>
+        <FC.StyledUl open={open}>
+          <li> <FC.HeaderLinks href="/">
+            <FC.HeaderImage width={60} src={logoGeek}></FC.HeaderImage>
+          </FC.HeaderLinks></li>
+          <li><FC.HeaderLinks href="/products">Shop</FC.HeaderLinks></li>
+          <li><FC.HeaderLinks href="#">Stories</FC.HeaderLinks></li>
+          <li><FC.HeaderLinks href="#">About</FC.HeaderLinks></li>
+        </FC.StyledUl>
+        <FC.StyledBurger open={open} onClick={() => setOpen(!open)}>  
+          <div />
+          <div />
+          <div />
+        </FC.StyledBurger>
       </div>
       <div>
         <FC.HeaderLinks href="/cart">

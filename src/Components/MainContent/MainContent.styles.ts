@@ -52,7 +52,7 @@ height: 50%;
 border-radius:20px;
 object-fit: cover;
 
-@media (max-height:550) {
+@media (max-height:550px) {
   width:30%;
 }
 @media (max-width: 550px) {
@@ -60,6 +60,10 @@ object-fit: cover;
      
     border-radius:0px;
   }
+`
+
+export const ImageLink = styled.a`
+  
 `
 
 
