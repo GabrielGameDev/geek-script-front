@@ -8,11 +8,11 @@ import { User } from "../../api/user";
 
 export const Header: React.FC = () => {
   const [user, setUser] = useState<User>({
-    id: "",
+    id_user: "",
     name: "",
     email: "",
     password: "",
-    isAdm: "",
+    scope: "",
   });
 
   const [counter, setCounter] = useState(0);
@@ -25,9 +25,9 @@ export const Header: React.FC = () => {
       setUser({
         name: JSON.parse(newUser).name,
         email: JSON.parse(newUser).email,
-        id: JSON.parse(newUser).id_user,
+        id_user: JSON.parse(newUser).id_user,
         password: JSON.parse(newUser).password,
-        isAdm: JSON.parse(newUser).scope,
+        scope: JSON.parse(newUser).scope,
       });
       if (JSON.parse(newUser).scope === "admin") {
         setIsAdmin(true);
@@ -41,20 +41,29 @@ export const Header: React.FC = () => {
     }
   }, []);
 
-  const [open, setOpen] = useState<FC.IHeader>(false)
+  const [open, setOpen] = useState<FC.IHeader>(false);
 
   return (
     <FC.HeaderDiv>
       <div>
         <FC.StyledUl open={open}>
-          <li> <FC.HeaderLinks href="/">
-            <FC.HeaderImage width={60} src={logoGeek}></FC.HeaderImage>
-          </FC.HeaderLinks></li>
-          <li><FC.HeaderLinks href="/products">Shop</FC.HeaderLinks></li>
-          <li><FC.HeaderLinks href="#">Stories</FC.HeaderLinks></li>
-          <li><FC.HeaderLinks href="#">About</FC.HeaderLinks></li>
+          <li>
+            {" "}
+            <FC.HeaderLinks href="/">
+              <FC.HeaderImage width={60} src={logoGeek}></FC.HeaderImage>
+            </FC.HeaderLinks>
+          </li>
+          <li>
+            <FC.HeaderLinks href="/products">Shop</FC.HeaderLinks>
+          </li>
+          <li>
+            <FC.HeaderLinks href="#">Stories</FC.HeaderLinks>
+          </li>
+          <li>
+            <FC.HeaderLinks href="#">About</FC.HeaderLinks>
+          </li>
         </FC.StyledUl>
-        <FC.StyledBurger open={open} onClick={() => setOpen(!open)}>  
+        <FC.StyledBurger open={open} onClick={() => setOpen(!open)}>
           <div />
           <div />
           <div />
@@ -66,7 +75,7 @@ export const Header: React.FC = () => {
           <FC.HeaderImage src={iconCart} width={17}></FC.HeaderImage>
         </FC.HeaderLinks>
 
-        {user.id ? (
+        {user.id_user ? (
           <FC.HeaderLinks
             href={isAdmin ? "/adm" : "/perfil"}
           >{`Olá, ${user.name}`}</FC.HeaderLinks>

@@ -12,6 +12,13 @@ export const ProfileContent: React.FC = () => {
     isAdm: "",
   });
 
+  function handleLogout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("cart");
+    window.location.href = "/";
+  }
+
   useEffect(() => {
     const newUser = localStorage.getItem("user");
     if (newUser) {
@@ -22,6 +29,8 @@ export const ProfileContent: React.FC = () => {
         password: JSON.parse(newUser).password,
         isAdm: JSON.parse(newUser).scope,
       });
+    } else {
+      window.location.href = "/";
     }
   }, []);
 
@@ -37,7 +46,7 @@ export const ProfileContent: React.FC = () => {
           <FC.StyledLabel>Meu pedidos</FC.StyledLabel>
           <FC.StyledA href="/pedidos">Clique aqui</FC.StyledA>
           <FC.StyledLabel>Logout</FC.StyledLabel>
-          <FC.StyledA href="/pedidos">Clique aqui</FC.StyledA>
+          <FC.StyledA onClick={handleLogout}>Clique aqui</FC.StyledA>
         </FC.StyledForm>
       </FC.StyledDiv>
     </FC.Grid>

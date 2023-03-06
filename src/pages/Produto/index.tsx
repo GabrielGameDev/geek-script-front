@@ -13,6 +13,12 @@ export default function Produto() {
   const [product, setProduct] = useState([]);
 
   function AddToCart() {
+    const newUser = localStorage.getItem("user");
+    if (!newUser) {
+      window.location.href = "/login";
+      return;
+    }
+
     const cartItems = localStorage.getItem("cart");
     let cart = [];
     if (cartItems) {
