@@ -1,13 +1,10 @@
 import styled from "styled-components";
 
-
 interface LinkProps {
     colorLink?: string;
     marginY?: string;
     marginX?: string;
 }
-
-
 
 export const StyledInput = styled.input<LinkProps>`
     border:none;
