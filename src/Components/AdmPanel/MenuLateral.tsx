@@ -1,5 +1,6 @@
 import React from "react";
 import * as FC from "./AdmPanel.styles";
+import { useEffect } from "react";
 
 export const MenuLateral: React.FC = () => {
   function handleLogout() {
@@ -8,6 +9,13 @@ export const MenuLateral: React.FC = () => {
     localStorage.removeItem("cart");
     window.location.href = "/";
   }
+
+  useEffect(() => {
+    const newUser = localStorage.getItem("user");
+    if (!newUser) {
+      window.location.href = "/";
+    }
+  }, []);
 
   return (
     <FC.StyledUl>

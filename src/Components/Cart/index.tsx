@@ -15,6 +15,11 @@ export const CartContent: React.FC = () => {
   }
 
   useEffect(() => {
+    const newUser = localStorage.getItem("user");
+    if (!newUser) {
+      window.location.href = "/";
+    }
+
     getCategories().then((response) => {
       setCategories(response.data);
     });

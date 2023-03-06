@@ -29,6 +29,8 @@ export const ProfileContent: React.FC = () => {
         password: JSON.parse(newUser).password,
         isAdm: JSON.parse(newUser).scope,
       });
+    } else {
+      window.location.href = "/";
     }
   }, []);
 
