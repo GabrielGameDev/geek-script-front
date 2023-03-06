@@ -1,15 +1,29 @@
 import React from "react";
-import * as FC from './AdmPanel.styles'
-
+import * as FC from "./AdmPanel.styles";
 
 export const MenuLateral: React.FC = () => {
-    return (
-<FC.StyledUl>
-    <FC.StyledA href="http://localhost:5173/adm"><FC.StyledLi>Produtos</FC.StyledLi></FC.StyledA>
-    <FC.StyledA href="http://localhost:5173/adm/users"><FC.StyledLi>Usuários</FC.StyledLi></FC.StyledA>
-    <FC.StyledA href="http://localhost:5173/adm/pedidos"><FC.StyledLi>Pedidos</FC.StyledLi></FC.StyledA>
-    <FC.StyledA href="http://localhost:5173/adm/categorias"><FC.StyledLi>Categorias</FC.StyledLi></FC.StyledA>
-    <FC.StyledButton >Logout</FC.StyledButton>
-</FC.StyledUl>)
+  function handleLogout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("cart");
+    window.location.href = "/";
+  }
 
-}
+  return (
+    <FC.StyledUl>
+      <FC.StyledA href="/adm">
+        <FC.StyledLi>Produtos</FC.StyledLi>
+      </FC.StyledA>
+      <FC.StyledA href="/adm/users">
+        <FC.StyledLi>Usuários</FC.StyledLi>
+      </FC.StyledA>
+      <FC.StyledA href="/adm/pedidos">
+        <FC.StyledLi>Pedidos</FC.StyledLi>
+      </FC.StyledA>
+      <FC.StyledA href="/adm/categorias">
+        <FC.StyledLi>Categorias</FC.StyledLi>
+      </FC.StyledA>
+      <FC.StyledButton onClick={handleLogout}>Logout</FC.StyledButton>
+    </FC.StyledUl>
+  );
+};

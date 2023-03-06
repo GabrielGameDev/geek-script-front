@@ -75,7 +75,7 @@ export const CartContent: React.FC = () => {
           </FC.ContentBox>
           <FC.StyledP>Frete: Grátis</FC.StyledP>
           <FC.StyledP>Total: R${totalPrice.toFixed(2)}</FC.StyledP>
-          <FC.StyledButton href="http://localhost:5173/checkout">
+          <FC.StyledButton href="/checkout">
             Seguir para o checkout
           </FC.StyledButton>
         </FC.StyledForm>
