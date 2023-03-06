@@ -30,12 +30,17 @@ export const AdmPedidos: React.FC = () => {
                     <FC.StyledP>Número do pedido</FC.StyledP>
                     <FC.StyledP>Cliente</FC.StyledP>
                     <FC.StyledP>Valor</FC.StyledP>
-                    <FC.StyledP>Itens</FC.StyledP>
-                    <FC.StyledP>Quantidade</FC.StyledP>
-                    <div>
+                    <ol>
+                        <FC.StyledLi fontColor="#D1C4E9">Action Figure</FC.StyledLi>
+                        <FC.StyledLi fontColor="#D1C4E9">Camiseta do homem-aranha</FC.StyledLi>
+                        <FC.StyledLi fontColor="#D1C4E9">Funko Naruto</FC.StyledLi>
+                        <FC.StyledLi fontColor="#D1C4E9">Caneca Supernatural</FC.StyledLi>
+                    </ol>
+                    <FC.StyledP>100</FC.StyledP>
+                    <FC.StyledDivForm display='column' justifyC='space-around'> 
                         <ButtonEditar />
                         <ButtonExcluir />
-                    </div>
+                    </FC.StyledDivForm>
                 </FC.ContentBoxCol>
             </FC.ContentBoxRow>
         </FC.Grid>

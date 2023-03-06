@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export interface IHeader {
-    open?:boolean;
+    open?: boolean | undefined;
 }
 
 export const HeaderDiv = styled.div`
@@ -48,7 +48,7 @@ export const Counter = styled.div`
     border-radius:5rem;
 `
 
-export const StyledUl = styled.ul`
+export const StyledUl = styled.ul<IHeader>`
     list-style:none;
     display:flex;
     flex-flow: row nowrap;
@@ -74,6 +74,7 @@ export const StyledUl = styled.ul`
     }
 `
 export const StyledBurger = styled.div<IHeader>`
+    @media (max-width:809px) {
     width:2rem;
     height:2rem;
     position:fixed;
@@ -86,7 +87,7 @@ export const StyledBurger = styled.div<IHeader>`
     div {
         width:2rem;
         height:0.25rem;
-        background-color: ${({open}) => open ? '#FF9800' : '#757575' };
+        background-color: ${({ open }) => open ? '#FF9800' : '#757575'};
         border-radius:10px;
         transform-origin: 1px;
         transition: all 0.3s linear;
@@ -96,10 +97,11 @@ export const StyledBurger = styled.div<IHeader>`
         }
         &:nth-child(2) {
             transform: ${({ open }) => open ? 'translateX(-100%)' : 'translateX(0)'};
-            opacity: ${({ open }) => open ? 0:1}
+            opacity: ${({ open }) => open ? 0 : 1}
         }
         &:nth-child(3) {
             transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
         }
+    }
     }
 `

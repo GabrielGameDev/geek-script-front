@@ -7,7 +7,9 @@ interface GridProps {
     marginX?: string;
     butWidth?: string;
     butHeight?: string;
-
+    fontColor?:string;
+    justifyC?:string;
+    display?:string;
 }
 
 export const Grid = styled.div<GridProps>`
@@ -18,6 +20,9 @@ export const Grid = styled.div<GridProps>`
     text-align:center;
     align-items:center;
     background-color: ${props => props.theme.colors.Primary};
+    @media (max-width:809px) {
+        grid-template-columns: ${props => props.gridSize || '1fr'};
+    }
 
 `
 
@@ -30,7 +35,10 @@ display:grid;
 grid-template-columns:${props => props.gridSize || '1fr'};
 grid-gap: 10px;
 border-bottom:solid 1px white;
+
 `
+
+
 
 export const StyledUl = styled.ul`
 list-style-type:none;
@@ -39,25 +47,43 @@ padding:10px;
 border:solid 1px ${props => props.theme.colors.LightPrimary};
 background-color: ${props => props.theme.colors.LightPrimary};
 height:100%;
+display:flex;
+flex-direction:column;
 
+@media (max-width:809px) {
+    flex-direction:row;
+    height:fit-content;
+    align-items:center;
+    border:solid 2px ${props => props.theme.colors.Primary}; 
+    padding:0px;
+    justify-content:space-around;
+}
 `
 
-export const StyledLi = styled.li`
+export const StyledLi = styled.li<GridProps>`
 
 padding: 5px 10px;
 text-align:start;
-color: ${props => props.theme.colors.Primary};
+color: ${props => props.fontColor || props.theme.colors.Primary};
 margin-bottom:3px;
+
 
 
 :hover {
     border-radius:3px;
-    border:solid 1px ${props => props.theme.colors.White};
     background-color: ${props => props.theme.colors.DarkPrimary};
     cursor:pointer;
-    color: ${props => props.theme.colors.LightGray};
+    color: ${props => props.theme.colors.LightPrimary};
 
 }
+@media (max-width: 809px){ 
+font-size:0.6rem;
+padding:2px 5px;
+width:45px;
+
+}
+
+
 `
 
 export const StyledH1 = styled.h1`
@@ -70,7 +96,9 @@ export const StyledH4 = styled.h4<GridProps>`
     color: ${props => props.theme.colors.Accent};
 text-align:start;
 padding-left:10px;
-
+@media (max-width:809px) {
+    font-size:12px;
+}
 `
 
 export const StyledButton = styled.button<GridProps>`
@@ -82,7 +110,7 @@ justify-content:center;
 align-items:center;
 border: none;
 border-radius:5px;
-padding: 5px 10px;  
+padding: 5px 10px;      
 display:flex;
 grid-area:b;
 margin:3px;
@@ -93,15 +121,25 @@ margin:3px;
         font-weight:bold;
         background-color:${props => props.theme.colors.DarkPrimary};
     }
+
+    @media (max-width:414px){
+        width:60px;
+        height:30px;
+    }
 `
 
-export const StyeledA = styled.a`
+export const StyledA = styled.a`
 text-decoration:none;
+:hover {
+    color:${props => props.theme.colors.LightPrimary};
+}
 `
 
-export const StyledDivForm = styled.div`
+export const StyledDivForm = styled.div<GridProps>`
 display:flex;
-justify-content:space-between;
+justify-content: ${props => props.justifyC || 'space-between'};
+align-items:center;
+flex-direction: ${props => props.display || 'row'};
 `
 export const StyledForm = styled.form<GridProps>`
    background-color: ${props => props.theme.colors.LightPrimary};
@@ -133,5 +171,9 @@ export const StyledP = styled.p`
     padding-left:10px;
     display:flex;
     align-items:center;
+
+    @media (max-width:809px) {
+        font-size:12px;
+    }
     
 `
