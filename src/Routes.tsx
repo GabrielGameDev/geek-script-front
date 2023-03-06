@@ -4,7 +4,12 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import { Cart } from "./pages/Cart";
-import { AdmCategories, AdmOrders, AdmProducts, AdmUsers } from "./pages/AdmPanel";
+import {
+  AdmCategories,
+  AdmOrders,
+  AdmProducts,
+  AdmUsers,
+} from "./pages/AdmPanel";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import Products from "./pages/products";
@@ -15,6 +20,7 @@ import { SucessCheck } from "./pages/Sucesso";
 import { Profile } from "./pages/Profile";
 import { UserOrders } from "./pages/UserPanel";
 import { UpdateProductPage } from "./pages/UpdateProduct";
+import { UpdateUserPage } from "./pages/UpdateUser";
 
 export function Routes() {
   return (
@@ -35,6 +41,7 @@ export function Routes() {
         <Route path="/perfil" element={<Profile />} />
         <Route path="/pedidos" element={<UserOrders />} />
         <Route path="/update/:id" element={<UpdateProductPage />} />
+        <Route path="/updateUser/:id" element={<UpdateUserPage />} />
       </WrapperRoutes>
     </BrowserRouter>
   );
