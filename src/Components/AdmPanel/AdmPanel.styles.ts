@@ -38,8 +38,6 @@ border-bottom:solid 1px white;
 
 `
 
-
-
 export const StyledUl = styled.ul`
 list-style-type:none;
 margin:0px;
@@ -61,29 +59,21 @@ flex-direction:column;
 `
 
 export const StyledLi = styled.li<GridProps>`
-
 padding: 5px 10px;
 text-align:start;
 color: ${props => props.fontColor || props.theme.colors.Primary};
 margin-bottom:3px;
-
-
-
 :hover {
     border-radius:3px;
     background-color: ${props => props.theme.colors.DarkPrimary};
     cursor:pointer;
     color: ${props => props.theme.colors.LightPrimary};
-
 }
 @media (max-width: 809px){ 
 font-size:0.6rem;
 padding:2px 5px;
 width:45px;
-
 }
-
-
 `
 
 export const StyledH1 = styled.h1`
@@ -100,7 +90,6 @@ padding-left:10px;
     font-size:12px;
 }
 `
-
 export const StyledButton = styled.button<GridProps>`
 width: ${props => props.butWidth || '120px'} ;
 height:${props => props.butHeight || '45px'};
@@ -114,7 +103,6 @@ padding: 5px 10px;
 display:flex;
 grid-area:b;
 margin:3px;
-
     :hover {
         cursor:pointer;
         color:${props => props.theme.colors.LightPrimary};
@@ -127,14 +115,12 @@ margin:3px;
         height:30px;
     }
 `
-
 export const StyledA = styled.a`
 text-decoration:none;
 :hover {
     color:${props => props.theme.colors.LightPrimary};
 }
 `
-
 export const StyledDivForm = styled.div<GridProps>`
 display:flex;
 justify-content: ${props => props.justifyC || 'space-between'};

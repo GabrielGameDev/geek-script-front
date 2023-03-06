@@ -17,7 +17,7 @@ export const Grid = styled.div`
     grid-template-areas:
 
     ". a a b b ."   ;
-    padding:5% 0%;
+    padding:5% 2%;
     text-align:center;
     align-items:center;
     background-color: ${props => props.theme.colors.White};
@@ -34,6 +34,7 @@ export const ContentBox = styled.div<GridProps>`
     text-align:${props => props.textAlign || 'start'};
     justify-content:${props => props.justifyContent || 'center'};
     margin-bottom:2%;
+    padding:1%;
 `
 
 export const StyledH3 = styled.h3`

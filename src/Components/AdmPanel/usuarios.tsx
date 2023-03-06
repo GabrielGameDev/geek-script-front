@@ -24,13 +24,13 @@ export const AdmUsuarios: React.FC = () => {
                 </FC.ContentBoxCol>
                 <FC.ContentBoxCol gridSize="repeat(5, 1fr)">
                     <FC.StyledP>Nome</FC.StyledP>
-                    <FC.StyledP>Email</FC.StyledP>
+                    <FC.StyledP>flaviogatti95@uol.com.br</FC.StyledP>
                     <FC.StyledP>ID</FC.StyledP>
                     <FC.StyledP>Perfil</FC.StyledP>
-                    <div>
+                    <FC.StyledDivForm display='column' justifyC='space-around'> 
                         <ButtonEditar />
                         <ButtonExcluir />
-                    </div>
+                    </FC.StyledDivForm>
                 </FC.ContentBoxCol>
                 
             </FC.ContentBoxRow>

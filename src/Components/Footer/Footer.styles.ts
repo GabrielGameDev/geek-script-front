@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 interface FooterProps {
     textAlign?: string;
-  
+
 }
 
 export const Grid = styled.div`
@@ -13,10 +13,8 @@ grid-template-columns: 2fr repeat(3, 1fr);
 grid-gap: 5px; 
 font-size: 0.85rem;
 
-@media (max-width: 809px){
-display:block;
 
-} ;
+ ;
 `
 
 
@@ -33,6 +31,8 @@ export const ContentBox = styled.div`
 export const StyledH1 = styled.h1<FooterProps>`
  color: ${props => props.theme.colors.Black};
 text-align:${props => props.textAlign};
+font-size:0.9rem;
+
  
   `
 
@@ -41,6 +41,8 @@ export const StyledP = styled.p`
 color: ${props => props.theme.colors.DarkGray};
 text-align:center;
 width:100%;
+font-size:0.8rem;
+
 `
 
 export const StyledUl = styled.ul`
