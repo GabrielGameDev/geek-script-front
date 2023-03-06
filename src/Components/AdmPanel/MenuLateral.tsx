@@ -14,6 +14,11 @@ export const MenuLateral: React.FC = () => {
     const newUser = localStorage.getItem("user");
     if (!newUser) {
       window.location.href = "/";
+    } else {
+      const user = JSON.parse(newUser);
+      if (user.scope !== "admin") {
+        window.location.href = "/";
+      }
     }
   }, []);
 

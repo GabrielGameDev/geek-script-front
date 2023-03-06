@@ -1,11 +1,11 @@
 import api from "../config";
 
 export interface User {
-    id?: string;
+    id_user?: string;
     name: string;
     email: string;
     password: string;
-    isAdm?: string;
+    scope?: string;
 }
 
 export async function createUser(user: User) {
@@ -13,7 +13,7 @@ export async function createUser(user: User) {
 }
 
 export async function getUsers() {
-    return api.get("/user");
+    return api.get("/user/admin");
 }
 
 export async function getUser(id: string) {
