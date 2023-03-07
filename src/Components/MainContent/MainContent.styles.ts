@@ -38,7 +38,7 @@ width:100%;
 
 export const Content1 = styled.div`
 justify-content:center;
-align-items:flex-start;
+align-items:center;
 display:flex;
 `
 export const Content2 = styled(Content1)`
@@ -46,24 +46,25 @@ export const Content2 = styled(Content1)`
 `
 
 export const MainImage = styled.img` 
-margin-bottom:20px;
-width: 50%;
-height: 50%;
+width:100%;
+height:100%;
 border-radius:20px;
 object-fit: cover;
 
-@media (max-height:550px) {
-  width:30%;
-}
-@media (max-width: 550px) {
-  width:100%;
-     
+@media (max-width: 809px) {
     border-radius:0px;
   }
 `
 
 export const ImageLink = styled.a`
-  
+  width:600px;
+  height:250px;
+  margin-bottom:5%;
+
+  @media (max-width:809px) {
+    width:100%;
+  height:200px;
+  }
 `
 
 

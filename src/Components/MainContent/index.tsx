@@ -19,7 +19,7 @@ export const MainContent: React.FC = () => {
   return (
     <div>
       <FC.Grid>
-        <FC.Title>Os melhores produto Geek estão aqui</FC.Title>
+        <FC.Title>Os melhores produtos Geek estão aqui</FC.Title>
 
         <FC.ContentBox>
           <FC.Subtitle></FC.Subtitle>
@@ -38,8 +38,8 @@ export const MainContent: React.FC = () => {
         <FC.Content2>
           {" "}
           <FC.ImageLink href="/products/1">
-          <FC.MainImage src={product.photo} alt="Imagem Produto 1" />{" "}
-          </FC.ImageLink>
+          <FC.MainImage src={product.photo} alt="Imagem Produto 1" />
+          </FC.ImageLink>{" "}
         </FC.Content2>
       </FC.Grid>
     </div>

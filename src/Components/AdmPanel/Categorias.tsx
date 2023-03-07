@@ -57,7 +57,6 @@ export const AdmCategorias: React.FC = () => {
         {categories.map((category) => (
           <FC.ContentBoxCol gridSize="repeat(2, 1fr)">
             <FC.StyledP>{category.name}</FC.StyledP>
-            <div>
               <FC.ContentBoxRow rowSize="1fr">
                 <FC.StyledButton
                   butHeight="20px"
@@ -67,7 +66,6 @@ export const AdmCategorias: React.FC = () => {
                   Excluir
                 </FC.StyledButton>
               </FC.ContentBoxRow>
-            </div>
           </FC.ContentBoxCol>
         ))}
       </FC.ContentBoxRow>

@@ -77,7 +77,7 @@ export const StyledBurger = styled.div<IHeader>`
     @media (max-width:809px) {
     width:2rem;
     height:2rem;
-    position:fixed;
+    position:absolute;
     top:5px;
     left:20px;
     display:flex;

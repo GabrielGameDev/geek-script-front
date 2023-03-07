@@ -29,6 +29,7 @@ export const Grid = styled.div<GridProps>`
 export const ContentBoxRow = styled.div<GridProps>`
 display:grid;
 grid-template-rows:${props => props.rowSize || '1fr'};
+align-items:center;
 `
 export const ContentBoxCol = styled.div<GridProps>`
 display:grid;

@@ -9,6 +9,7 @@ declare module 'styled-components' {
         Black: string;
         DarkGray: string;
         LightGray: string;
+        Divider: string;
 
       };
     }
@@ -24,6 +25,7 @@ export const theme = {
         Accent: '#FF9800',
         Black: '#212121',
         DarkGray: '#757575',
-        LightGray: '#BDBDBD'
+        LightGray: '#BDBDBD',
+        Divider: '#BDBDBD'
     }
 }

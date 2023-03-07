@@ -100,7 +100,7 @@ export const AdmProdutos: React.FC = () => {
 
   return (
     <FC.Grid>
-        <MenuLateral />
+      <MenuLateral />
       <FC.ContentBoxRow>
         <div>
           {" "}
@@ -148,12 +148,14 @@ export const AdmProdutos: React.FC = () => {
               <FC.StyledP>{product.id_product}</FC.StyledP>
               <FC.StyledP>{product.price}</FC.StyledP>
               <FC.StyledP>{product.stock}</FC.StyledP>
-              <button onClick={() => handleUpdate(product.id_product)}>
+              <FC.StyledDivForm display='column' justifyC='space-around'> 
+              <FC.StyledButton butHeight="20px" butWidth="80px" onClick={() => handleUpdate(product.id_product)}>
                 Editar
-              </button>
-              <button onClick={() => handleDeleteProduct(product.id_product)}>
+              </FC.StyledButton>
+              <FC.StyledButton butHeight="20px" butWidth="80px" onClick={() => handleDeleteProduct(product.id_product)}>
                 Excluir
-              </button>
+              </FC.StyledButton>
+              </FC.StyledDivForm>
             </FC.ContentBoxCol>
           );
         })}
