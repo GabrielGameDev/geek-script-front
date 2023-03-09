@@ -45,9 +45,7 @@ export const AdmUsuarios: React.FC = () => {
       .then((response) => {
         console.log(response.data);
         if (response.data) {
-          getUsers().then((users) => {
-            setUsers(users.data);
-          });
+          window.location.reload();
         }
       })
       .catch((error) => {
