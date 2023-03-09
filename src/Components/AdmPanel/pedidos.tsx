@@ -11,14 +11,7 @@ export const AdmPedidos: React.FC = () => {
                 <div>
                     <FC.StyledH1>Painel Administrativo</FC.StyledH1>
                 </div>
-                <FC.StyledForm >
-                    <FC.StyledInput placeholder='Número do pedido'></FC.StyledInput>
-                    <FC.StyledInput placeholder='Cliente'></FC.StyledInput>
-                    <FC.StyledInput placeholder='Valor'></FC.StyledInput>
-                    <FC.StyledInput placeholder='Itens'></FC.StyledInput>
-                    <FC.StyledInput placeholder='Quantidade'></FC.StyledInput>
-                    <FC.StyledButton>Adicionar Pedido</FC.StyledButton>
-                </FC.StyledForm>
+                
                 <FC.ContentBoxCol gridSize="repeat(6, 1fr)">
                     <FC.StyledH4 >Número do pedido</FC.StyledH4>
                     <FC.StyledH4 >Cliente</FC.StyledH4>

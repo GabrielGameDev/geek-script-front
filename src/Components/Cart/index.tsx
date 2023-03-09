@@ -54,7 +54,8 @@ export const CartContent: React.FC = () => {
             <FC.ContentBox
               gridFractionRows="1fr 1fr 1fr 1fr"
               height="70px"
-              justifyContent="left"
+              justifyContent="right"
+              textAlign="end"
             >
               <FC.StyledH5>{product.name}</FC.StyledH5>
               <FC.StyledP>

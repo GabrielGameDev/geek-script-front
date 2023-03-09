@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { theme } from "../Theme/Theme";
+
 
 interface FooterProps {
     textAlign?: string;
@@ -7,7 +9,7 @@ interface FooterProps {
 
 export const Grid = styled.div`
 height: 100%    ;
-background-color: ${props => props.theme.colors.LightPrimary};
+background-color: ${theme.colors.LightPrimary};
 display:grid;
 grid-template-columns: 2fr repeat(3, 1fr);
 grid-gap: 5px; 
@@ -29,7 +31,7 @@ export const ContentBox = styled.div`
   `
 
 export const StyledH1 = styled.h1<FooterProps>`
- color: ${props => props.theme.colors.Black};
+ color: ${theme.colors.Black};
 text-align:${props => props.textAlign};
 font-size:0.9rem;
 
@@ -38,10 +40,10 @@ font-size:0.9rem;
 
 export const StyledP = styled.p`
 
-color: ${props => props.theme.colors.DarkGray};
+color: ${theme.colors.DarkGray};
 text-align:center;
 width:100%;
-font-size:0.8rem;
+font-size:0.75rem;
 
 `
 
@@ -52,8 +54,9 @@ padding:0px;
 `
 
 export const StyledLi = styled.li`
-color:${props => props.theme.colors.DarkGray};
+color:${theme.colors.DarkGray};
 padding:0px;
+
 `
 
 export const StyledForm = styled.form`
@@ -62,7 +65,7 @@ export const StyledForm = styled.form`
    justify-self:start;
    grid-gap: 0px; 
    flex-direction:row;
-   border: solid 1px ${props => props.theme.colors.LightPrimary};
+   border: solid 1px ${theme.colors.LightPrimary};
    border-radius: 5px;
    padding:1px;
    justify-content:center;
@@ -90,7 +93,7 @@ export const StyledInput = styled.input`
 export const StyledButton = styled.button`
    
     background-color: white;
-    color: ${props => props.theme.colors.Primary};
+    color: ${theme.colors.Primary};
     border:none;
     letter-spacing: .1rem;
     font-weight:500;
@@ -104,8 +107,8 @@ export const StyledButton = styled.button`
 
 export const StyledA = styled.a`
     text-decoration:none;
-    font-size:0.83rem;
-    color:${props => props.theme.colors.DarkGray};
+    font-size:0.75rem;
+    color:${theme.colors.DarkGray};
 
     :hover { 
         cursor:pointer;

@@ -71,9 +71,11 @@ margin-bottom:3px;
     color: ${props => props.theme.colors.LightPrimary};
 }
 @media (max-width: 809px){ 
-font-size:0.6rem;
+font-size:0.78rem;
 padding:2px 5px;
 width:45px;
+margin:0px;
+
 }
 `
 

@@ -46,7 +46,7 @@ export default function Produto() {
       <Main>
         <style.Section>
           <style.Images>
-            {Array.from({ length: 4 }).map(() => (
+            {Array.from({ length: 1 }).map(() => (
               <img src={product.photo} alt="" />
             ))}
           </style.Images>

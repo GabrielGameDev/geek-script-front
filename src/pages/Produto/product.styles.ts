@@ -4,21 +4,20 @@ import { theme } from "../../Components/Theme/Theme";
 
 export const Images = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 50%;
+    grid-template-columns: repeat(1, 100%);
     gap: 1rem;
     img{
-        width: 20rem;
-        height: 20rem;
         object-fit: cover;
         border: 1px solid #ccc;
-        
+
+        @media (max-width:809px) {
+        width:100%;            
     }
 `
 
 export const ProductInfo = styled.div`
     display: flex;
-    width: 50%;
+    width: 100%;
     flex-direction: column;
     gap: 1rem;
 
@@ -47,11 +46,11 @@ export const SizeButton = styled.button`
     `
 
 export const AddToCart = styled.button`
-    width: 30rem;
+    width: 100%;
     height: 3rem;
     background-color: ${theme.colors.Primary};
     color: ${theme.colors.White};
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -64,6 +63,12 @@ export const AddToCart = styled.button`
 `
 
 export const Section = styled.section`
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+
+    @media (max-width:809px) {
+        display:flex;
+        flex-direction:column;
+    }
 `

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Footer } from "../../Components/Footer";
 import ProductsComponent from "../../Components/Products";
 
 export default function Products() {
@@ -11,6 +12,7 @@ export default function Products() {
   return (
     <>
       <ProductsComponent />
+      <Footer />
     </>
   );
 }

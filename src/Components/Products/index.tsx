@@ -12,6 +12,7 @@ import {
   ProductsContainer,
   StyledDiv,
   ShowMoreButton,
+  DescrpDiv,
 } from "./producsts.style";
 import ProductCard from "../../Components/ProductCard";
 
@@ -74,13 +75,13 @@ export default function ProductsComponent() {
       </ThemeProvider>
 
       <StoreDescription>
-        <StyledDiv>
+        <DescrpDiv  >
           <h1>Products</h1>
           <p>
             Encontre o produto geek que é a sua cara. Decore sua casa, mude seu
             estilo. Aqui você encontra de tudo
           </p>
-        </StyledDiv>
+        </DescrpDiv >
       </StoreDescription>
       <Main>
         <Categories>
