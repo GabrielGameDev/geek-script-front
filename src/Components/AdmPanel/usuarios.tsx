@@ -33,8 +33,8 @@ export const AdmUsuarios: React.FC = () => {
         <FC.StyledForm>
           <FC.StyledInput placeholder="Nome"></FC.StyledInput>
           <FC.StyledInput placeholder="Email"></FC.StyledInput>
-          <FC.StyledInput placeholder="ID"></FC.StyledInput>
-          <FC.StyledInput placeholder="perfil"></FC.StyledInput>
+          <FC.StyledInput placeholder="Senha"></FC.StyledInput>
+          <FC.StyledInput placeholder="Escopo"></FC.StyledInput>
           <FC.StyledButton>Adicionar Usuário</FC.StyledButton>
         </FC.StyledForm>
         <FC.ContentBoxCol gridSize="repeat(5, 1fr)">

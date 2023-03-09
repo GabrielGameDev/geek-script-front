@@ -21,6 +21,10 @@ export const Grid = styled.div`
     text-align:center;
     align-items:center;
     background-color: ${props => props.theme.colors.White};
+
+    @media (max-width:809px) {
+        display:block;
+    }
 `
 
 export const ContentBox = styled.div<GridProps>`

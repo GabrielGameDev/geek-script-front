@@ -16,7 +16,16 @@ export const StoreDescription = styled.div`
 `
 export const StyledDiv =styled.div`
     width:50%;
-@media (max-width:810px) {
+@media (max-width:809px) {
+    width:100%;
+    display:grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom:5%;
+}
+`
+export const DescrpDiv =styled.div`
+    width:50%;
+@media (max-width:809px) {
     width:100%;
     display:block;
 }
@@ -26,7 +35,9 @@ export const Main = styled.main`
 
 padding: 10px 10%;
 margin-top: 2rem;
-
+@media (max-width:809px) {
+    padding:5px 3%;
+}
 `
 
 export const Categories = styled.div`
@@ -37,6 +48,9 @@ export const Categories = styled.div`
     div{
         gap: 10px;
         display: flex;
+    }
+    @media (max-width: 809px) {
+        display:block;
     }
 `
 
@@ -56,7 +70,7 @@ export const FilterButton = styled.button<FilterButtonProps>`
 
     @media (max-width: 810px) {
         padding: 0.2rem 1.5rem;
-        height:30%;
+        height:35px;
     }
 `
 
@@ -90,6 +104,11 @@ export const ProductsContainer = styled.div`
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto;
     grid-gap: 3rem;
+
+    @media (max-width: 809px) {
+    grid-template-columns: repeat(1, 1fr);
+
+    }
 
     
 `
