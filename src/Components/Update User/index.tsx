@@ -18,59 +18,41 @@ export const UpdateUser: React.FC = () => {
   };
 
   const handleEmailChange = (event) => {
-    const category = event.target.value;
-    setCategory(category);
+    const email = event.target.value;
+    setEmail(email);
   };
 
-  const handlePriceChange = (event) => {
-    const price = event.target.value;
-    setPrice(price);
+  const handlePasswordChange = (event) => {
+    const pass = event.target.value;
+    setPassword(pass);
   };
 
-  const handleDescriptionChange = (event) => {
-    const description = event.target.value;
-    setDescription(description);
-  };
-
-  const handlePhotoChange = (event) => {
-    const photo = event.target.value;
-    setPhoto(photo);
+  const handleScopeChange = (event) => {
+    const scope = event.target.value;
+    setScope(scope);
   };
 
   function handleUpdate(event) {
     event.preventDefault();
-    const product = {
-      name: productName,
-      category_id: category,
-      price: price,
-      description: description,
-      photo: photo,
+    const newUser = {
+      name: name,
+      email: email,
+      password: password,
+      scope: scope,
     };
-    console.log(product);
-    updateProduct(id, product)
-      .then((response) => {
-        console.log(response);
-        if (response.status === 200) {
-          window.alert(`Produto ${product.name} atualizado com sucesso!`);
-          console.log(response.data);
-          window.location.href = "/adm";
-        }
-      })
-      .catch((error) => {
-        window.alert("Erro ao atualizar produto!" + error);
-        console.log(error);
-      });
+
+    updateUser(id, newUser).then((response) => {
+      console.log(response.data);
+    });
   }
 
   useEffect(() => {
-    getProduct(id).then((response) => {
-      console.log(response.data);
-      setProduct(response.data);
-      setProductName(response.data.name);
-      setCategory(response.data.category_id);
-      setPrice(response.data.price);
-      setDescription(response.data.description);
-      setPhoto(response.data.photo);
+    getUser(id).then((response) => {
+      setUser(response.data);
+      setName(response.data.name);
+      setEmail(response.data.email);
+      setPassword(response.data.password);
+      setScope(response.data.scope);
     });
   }, []);
 
@@ -79,29 +61,29 @@ export const UpdateUser: React.FC = () => {
       <FC.StyledForm action="">
         <FC.StyledInput
           type="text"
-          placeholder={product.name}
-          onChange={handleProductNameChange}
+          placeholder={user?.name}
+          onChange={handleNameChange}
         />
         <FC.StyledInput
           type="text"
-          placeholder={product.category_id}
-          onChange={handleCategoryChange}
+          placeholder={user?.email}
+          onChange={handleEmailChange}
         />
         <FC.StyledInput
           type="text"
-          placeholder={product.price}
-          onChange={handlePriceChange}
+          placeholder={user?.password}
+          onChange={handlePasswordChange}
         />
         <FC.StyledInput
           type="text"
-          placeholder={product.description}
-          onChange={handleDescriptionChange}
+          placeholder={user?.scope}
+          onChange={handleScopeChange}
         />
-        <FC.StyledInput
+        {/* <FC.StyledInput
           type="text"
           placeholder={product.photo}
           onChange={handlePhotoChange}
-        />
+        /> */}
         <FC.StyledButton onClick={handleUpdate}>Atualizar</FC.StyledButton>
       </FC.StyledForm>
     </>
