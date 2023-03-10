@@ -4,14 +4,32 @@ import { getProduct } from "../../api/produtos";
 import { getCategories } from "../../api/category";
 import { useEffect, useState } from "react";
 import { number } from "prop-types";
+import { checkout } from "../../api/checkout";
 
 export const CartContent: React.FC = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [purchaseIdList, setPurchaseIdList] = useState([]);
 
   function getCategoryById(id: number) {
     return categories.find((category) => category.id_category === id);
+  }
+
+  function handleCheckout(event) {
+    event.preventDefault();
+    const newCheckout = {
+      total: 249.5,
+      purchaseIdList: [4],
+    };
+    console.log(newCheckout);
+    checkout(newCheckout)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
   }
 
   useEffect(() => {
@@ -28,6 +46,7 @@ export const CartContent: React.FC = () => {
     let cart = [];
     if (cartItems) {
       cart = JSON.parse(cartItems);
+      setPurchaseIdList(cart);
     }
     let total = 0;
     cart.forEach((id: any) => {
@@ -81,8 +100,8 @@ export const CartContent: React.FC = () => {
           </FC.ContentBox>
           <FC.StyledP>Frete: Grátis</FC.StyledP>
           <FC.StyledP>Total: R${totalPrice.toFixed(2)}</FC.StyledP>
-          <FC.StyledButton href="/checkout">
-            Seguir para o checkout
+          <FC.StyledButton onClick={handleCheckout}>
+            Confirmar pedido
           </FC.StyledButton>
         </FC.StyledForm>
       </FC.ContentBox>
