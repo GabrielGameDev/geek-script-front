@@ -22,7 +22,7 @@ export const StyledDiv =styled.div`
     grid-template-columns: repeat(3, 1fr);
     margin-bottom:5%;
 }
-`
+` 
 export const DescrpDiv =styled.div`
     width:50%;
 @media (max-width:809px) {

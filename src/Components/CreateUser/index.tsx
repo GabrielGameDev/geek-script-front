@@ -2,6 +2,8 @@ import React from "react";
 import * as FC from '../LoginContent/LoginContent.styles'
 import { createUser, User } from "../../api/user";
 import { useState } from "react";
+import { Grid } from "../AA/grid.styles";
+import * as Tema from '../Theme/Theme'
 
 export const CreateUser: React.FC = () => {
     const [user, setUser] = useState<User>({
@@ -51,7 +53,7 @@ export const CreateUser: React.FC = () => {
         // window.location.href = "/";
     }
     return (
-    <FC.Grid>
+    <Grid gridSize="repeat(1, 1fr)" bgColor={Tema.theme.colors.Primary}>
         <FC.StyledDiv>
             <FC.StyledForm action="">
                 <FC.StyledH1>Faça Seu Cadastro</FC.StyledH1>
@@ -78,7 +80,7 @@ export const CreateUser: React.FC = () => {
                 </FC.StyledButton>
             </FC.StyledForm>
         </FC.StyledDiv>
-    </FC.Grid>
+    </Grid>
         
     );
 }

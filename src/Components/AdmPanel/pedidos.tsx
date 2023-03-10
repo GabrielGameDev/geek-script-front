@@ -1,17 +1,18 @@
 import React from "react";
+import { Grid } from "../AA/grid.styles";
 import * as FC from './AdmPanel.styles'
 import { ButtonEditar, ButtonExcluir } from "./Buttons";
 import { MenuLateral } from "./MenuLateral";
 
 export const AdmPedidos: React.FC = () => {
     return (
-        <FC.Grid>
+        <Grid>
             <MenuLateral />
             <FC.ContentBoxRow>
                 <div>
                     <FC.StyledH1>Painel Administrativo</FC.StyledH1>
                 </div>
-                
+
                 <FC.ContentBoxCol gridSize="repeat(6, 1fr)">
                     <FC.StyledH4 >Número do pedido</FC.StyledH4>
                     <FC.StyledH4 >Cliente</FC.StyledH4>
@@ -30,13 +31,17 @@ export const AdmPedidos: React.FC = () => {
                         <FC.StyledLi fontColor="#D1C4E9">Caneca Supernatural</FC.StyledLi>
                     </ol>
                     <FC.StyledP>100</FC.StyledP>
-                    <FC.StyledDivForm display='column' justifyC='space-around'> 
-                        <ButtonEditar />
-                        <ButtonExcluir />
+                    <FC.StyledDivForm display='column' justifyC='space-around'>
+                        <FC.StyledButton butHeight="20px" butWidth="80px" onClick={() => handleUpdate(product.id_product)}>
+                            Editar
+                        </FC.StyledButton>
+                        <FC.StyledButton butHeight="20px" butWidth="80px" onClick={() => handleDeleteProduct(product.id_product)}>
+                            Excluir
+                        </FC.StyledButton>
                     </FC.StyledDivForm>
                 </FC.ContentBoxCol>
             </FC.ContentBoxRow>
-        </FC.Grid>
+        </Grid>
 
     )
 }

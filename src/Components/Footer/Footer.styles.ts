@@ -8,7 +8,7 @@ interface FooterProps {
 }
 
 export const Grid = styled.div`
-height: 100%    ;
+height: fit-content   ;
 background-color: ${theme.colors.LightPrimary};
 display:grid;
 grid-template-columns: 2fr repeat(3, 1fr);
@@ -89,7 +89,7 @@ export const StyledInput = styled.input`
 
     }
     `
-
+ 
 export const StyledButton = styled.button`
    
     background-color: white;

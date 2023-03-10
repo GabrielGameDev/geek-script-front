@@ -4,6 +4,7 @@ import { ButtonEditar, ButtonExcluir } from "./Buttons";
 import { MenuLateral } from "./MenuLateral";
 import { getUsers, User, deleteUser } from "../../api/user";
 import { useState, useEffect } from "react";
+import { Grid } from "../AA/grid.styles";
 
 export const AdmUsuarios: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -24,7 +25,7 @@ export const AdmUsuarios: React.FC = () => {
   }, []);
 
   return (
-    <FC.Grid>
+    <Grid>
       <MenuLateral />
       <FC.ContentBoxRow>
         <div>
@@ -69,6 +70,6 @@ export const AdmUsuarios: React.FC = () => {
           </FC.ContentBoxCol>
         ))}
       </FC.ContentBoxRow>
-    </FC.Grid>
+    </Grid>
   );
 };

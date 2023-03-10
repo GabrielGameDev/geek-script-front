@@ -4,6 +4,8 @@ import { getProduct } from "../../api/produtos";
 import { getCategories } from "../../api/category";
 import { useEffect, useState } from "react";
 import { number } from "prop-types";
+import { Grid } from "../AA/grid.styles";
+import * as Tema from "../Theme/Theme"
 
 export const CartContent: React.FC = () => {
   const [products, setProducts] = useState([]);
@@ -42,8 +44,8 @@ export const CartContent: React.FC = () => {
   }, []);
 
   return (
-    <FC.Grid>
-      <FC.ContentBox gridArea="a" gridFractionRows="1fr 1fr 2fr">
+    <Grid gridSize="repeat(2, 1fr)" bgColor={Tema.theme.colors.White}>
+      <FC.ContentBox  gridFractionRows="1fr 1fr 2fr">
         <FC.StyledH3>Your Cart</FC.StyledH3>
         <FC.StyledP>
           Not ready to checkout? <a>continue shopping</a>
@@ -67,7 +69,7 @@ export const CartContent: React.FC = () => {
           </FC.ContentBox>
         ))}
       </FC.ContentBox>
-      <FC.ContentBox gridArea="b">
+      <FC.ContentBox>
         <FC.StyledForm>
           <FC.StyledH4>Resumo do pedido</FC.StyledH4>
           <FC.StyledInput placeholder="Cupom de desconto"></FC.StyledInput>
@@ -86,6 +88,6 @@ export const CartContent: React.FC = () => {
           </FC.StyledButton>
         </FC.StyledForm>
       </FC.ContentBox>
-    </FC.Grid>
+    </Grid>
   );
 };

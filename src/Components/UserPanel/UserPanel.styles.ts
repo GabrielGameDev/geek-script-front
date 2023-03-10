@@ -5,7 +5,7 @@ interface GridProps {
     gridSize?: string;
     textColor?:string;
 
-}
+} 
 
 export const Box = styled.div`
     height:fit-content;

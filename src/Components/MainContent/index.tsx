@@ -5,6 +5,7 @@ import { ShopAll } from "../ButtonShopAll/index";
 import mainImage from "../../../Images/images.jpg";
 import { getProducts, Product } from "../../api/produtos";
 import { useState, useEffect } from "react";
+import { Grid } from "../AA/grid.styles";
 
 export const MainContent: React.FC = () => {
   const [product, setProduct] = useState<Product>({} as Product);
@@ -18,7 +19,7 @@ export const MainContent: React.FC = () => {
 
   return (
     <div>
-      <FC.Grid>
+      <Grid gridRows='0.3fr 0.2fr 0.15fr auto' gridSize="1fr"> 
         <FC.Title>Os melhores produtos Geek estão aqui</FC.Title>
 
         <FC.ContentBox>
@@ -41,7 +42,7 @@ export const MainContent: React.FC = () => {
           <FC.MainImage src={product.photo} alt="Imagem Produto 1" />
           </FC.ImageLink>{" "}
         </FC.Content2>
-      </FC.Grid>
+      </Grid>
     </div>
   );
 };

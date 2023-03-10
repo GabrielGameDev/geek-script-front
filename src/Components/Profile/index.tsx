@@ -2,7 +2,8 @@ import React from "react";
 import * as FC from "./Profile.styles";
 import { getUser } from "../../api/user";
 import { useEffect, useState } from "react";
-
+import { Grid } from "../AA/grid.styles";
+import * as Tema from '../Theme/Theme'
 export const ProfileContent: React.FC = () => {
   const [user, setUser] = useState({
     id: "",
@@ -35,7 +36,7 @@ export const ProfileContent: React.FC = () => {
   }, []);
 
   return (
-    <FC.Grid>
+    <Grid gridRows='1fr' gridSize="0.25fr" bgColor={Tema.theme.colors.White}>
       <FC.StyledDiv>
         <FC.StyledP>Sobre</FC.StyledP>
         <FC.StyledForm>
@@ -49,6 +50,6 @@ export const ProfileContent: React.FC = () => {
           <FC.StyledA onClick={handleLogout}>Clique aqui</FC.StyledA>
         </FC.StyledForm>
       </FC.StyledDiv>
-    </FC.Grid>
+    </Grid>
   );
 };

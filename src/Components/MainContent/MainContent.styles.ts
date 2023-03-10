@@ -2,14 +2,7 @@ import styled from 'styled-components';
 
 
 
-export const Grid = styled.div`
-height: fit-content;
-background-color: ${props => props.theme.colors.Primary};
-display:grid;
-grid-template-rows: 0.3fr 0.2fr 0.15fr auto;
-grid-gap: 20px; 
 
-`
 
 export const Title = styled.h1`
 color: ${props => props.theme.colors.Accent};

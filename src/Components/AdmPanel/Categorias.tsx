@@ -1,6 +1,6 @@
 import React from "react";
 import * as FC from "./AdmPanel.styles";
-import { ButtonEditar, ButtonExcluir } from "./Buttons";
+import { Grid } from "../AA/grid.styles";
 import { MenuLateral } from "./MenuLateral";
 import {
   getCategories,
@@ -36,7 +36,7 @@ export const AdmCategorias: React.FC = () => {
   }, []);
 
   return (
-    <FC.Grid>
+    <Grid>
       <MenuLateral />
       <FC.ContentBoxRow>
         <div>
@@ -69,6 +69,6 @@ export const AdmCategorias: React.FC = () => {
           </FC.ContentBoxCol>
         ))}
       </FC.ContentBoxRow>
-    </FC.Grid>
+    </Grid>
   );
 };

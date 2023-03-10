@@ -9,6 +9,7 @@ import {
   updateProduct,
 } from "../../api/produtos";
 import { MenuLateral } from "./MenuLateral";
+import { Grid } from "../AA/grid.styles";
 
 export const AdmProdutos: React.FC = () => {
   const [products, setProducts] = useState([]);
@@ -99,7 +100,7 @@ export const AdmProdutos: React.FC = () => {
   }, []);
 
   return (
-    <FC.Grid>
+    <Grid>
       <MenuLateral />
       <FC.ContentBoxRow>
         <div>
@@ -159,6 +160,6 @@ export const AdmProdutos: React.FC = () => {
           );
         })}
       </FC.ContentBoxRow>
-    </FC.Grid>
+    </Grid>
   );
 };

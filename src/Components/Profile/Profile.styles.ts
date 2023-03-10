@@ -6,22 +6,12 @@ interface LinkProps {
     marginX?: string;
 }
 
-export const Grid = styled.div`
-height: fit-content;
-background-color: ${props => props.theme.colors.White};
-display:grid;
-grid-template-rows: 1fr; 
-grid-template-columns: 1fr; 
-justify-items:center;
-`
-
 export const StyledDiv = styled.div`
-    display:grid;
-    width:25%;
+    display:block;
     justify-content:center;
     align-items:center;
     padding:5% 3%;
-    margin:5% ;
+    margin:5%;
 `
 
 export const StyledP = styled.p`
@@ -29,6 +19,7 @@ export const StyledP = styled.p`
     font-size:2rem;
     border-bottom: 1px solid gray;
     margin-bottom:5%;
+    
 `
 
 export const StyledForm = styled.form`
@@ -37,6 +28,9 @@ export const StyledForm = styled.form`
    flex-direction:column;
    display:flex;
    text-align:left;
+   @media (max-width:809px){
+    text-align:center;
+   }
     `
 
 export const StyledInput = styled.input<LinkProps>`
@@ -46,8 +40,12 @@ export const StyledInput = styled.input<LinkProps>`
     :focus {
         outline:none;
     }
-`
 
+    @media (max-width:809px){
+    text-align:center;
+   }
+`
+ 
 export const StyledLabel = styled.label`
    margin-top:3%;
 
