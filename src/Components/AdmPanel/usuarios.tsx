@@ -2,12 +2,57 @@ import React from "react";
 import * as FC from "./AdmPanel.styles";
 import { ButtonEditar, ButtonExcluir } from "./Buttons";
 import { MenuLateral } from "./MenuLateral";
-import { getUsers, User, deleteUser } from "../../api/user";
+import { getUsers, User, deleteUser, createUser } from "../../api/user";
 import { useState, useEffect } from "react";
 import { Grid } from "../AA/grid.styles";
 
 export const AdmUsuarios: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [scope, setScope] = useState("");
+
+  const handleNameChange = (event) => {
+    const name = event.target.value;
+    setName(name);
+  };
+
+  const handleEmailChange = (event) => {
+    const email = event.target.value;
+    setEmail(email);
+  };
+
+  const handlePasswordChange = (event) => {
+    const pass = event.target.value;
+    setPassword(pass);
+  };
+
+  const handleScopeChange = (event) => {
+    const scope = event.target.value;
+    setScope(scope);
+  };
+
+  function handleCreateUser(event) {
+    event.preventDefault();
+    const newUser = {
+      name: name,
+      email: email,
+      password: password,
+      scope: scope,
+    };
+
+    createUser(newUser)
+      .then((response) => {
+        console.log(response.data);
+        if (response.data) {
+          window.location.reload();
+        }
+      })
+      .catch((error) => {
+        window.alert("Erro ao criar usuário. Erro: " + error.response.data);
+      });
+  }
 
   function handleDeleteUser(id: string) {
     deleteUser(id).then(() => {
@@ -15,6 +60,10 @@ export const AdmUsuarios: React.FC = () => {
         setUsers(users.data);
       });
     });
+  }
+
+  function handleUpdate(id: number) {
+    window.location.href = `/updateUser/${id}`;
   }
 
   useEffect(() => {
@@ -32,11 +81,25 @@ export const AdmUsuarios: React.FC = () => {
           <FC.StyledH1>Painel Administrativo</FC.StyledH1>
         </div>
         <FC.StyledForm>
-          <FC.StyledInput placeholder="Nome"></FC.StyledInput>
-          <FC.StyledInput placeholder="Email"></FC.StyledInput>
-          <FC.StyledInput placeholder="Senha"></FC.StyledInput>
-          <FC.StyledInput placeholder="Escopo"></FC.StyledInput>
-          <FC.StyledButton>Adicionar Usuário</FC.StyledButton>
+          <FC.StyledInput
+            placeholder="Nome"
+            onChange={handleNameChange}
+          ></FC.StyledInput>
+          <FC.StyledInput
+            placeholder="Email"
+            onChange={handleEmailChange}
+          ></FC.StyledInput>
+          <FC.StyledInput
+            placeholder="Senha"
+            onChange={handlePasswordChange}
+          ></FC.StyledInput>
+          <FC.StyledInput
+            placeholder="perfil"
+            onChange={handleScopeChange}
+          ></FC.StyledInput>
+          <FC.StyledButton onClick={handleCreateUser}>
+            Adicionar Usuário
+          </FC.StyledButton>
         </FC.StyledForm>
         <FC.ContentBoxCol gridSize="repeat(5, 1fr)">
           <FC.StyledH4>Nome</FC.StyledH4>
@@ -52,7 +115,11 @@ export const AdmUsuarios: React.FC = () => {
             <FC.StyledP>{user.scope}</FC.StyledP>
             <div>
               <FC.ContentBoxRow rowSize="1fr">
-                <FC.StyledButton butHeight="20px" butWidth="80px">
+                <FC.StyledButton
+                  butHeight="20px"
+                  butWidth="80px"
+                  onClick={() => handleUpdate(user.id_user)}
+                >
                   Editar
                 </FC.StyledButton>
               </FC.ContentBoxRow>
