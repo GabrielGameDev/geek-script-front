@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid } from "../AA/grid.styles";
 import * as FC from './AdmPanel.styles'
-import { ButtonEditar, ButtonExcluir } from "./Buttons";
 import { MenuLateral } from "./MenuLateral";
 
 export const AdmPedidos: React.FC = () => {

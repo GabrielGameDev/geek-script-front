@@ -1,6 +1,5 @@
 import React from "react";
 import * as FC from "./AdmPanel.styles";
-import { ButtonEditar, ButtonExcluir } from "./Buttons";
 import { MenuLateral } from "./MenuLateral";
 import { getUsers, User, deleteUser, createUser } from "../../api/user";
 import { useState, useEffect } from "react";
