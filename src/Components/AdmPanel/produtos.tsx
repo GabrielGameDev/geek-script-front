@@ -9,6 +9,7 @@ import {
   updateProduct,
 } from "../../api/produtos";
 import { MenuLateral } from "./MenuLateral";
+import { Grid } from "../AA/grid.styles";
 
 export const AdmProdutos: React.FC = () => {
   const [products, setProducts] = useState([]);
@@ -99,10 +100,10 @@ export const AdmProdutos: React.FC = () => {
   }, []);
 
   return (
-    <FC.Grid>
+    <Grid gridMedia="1fr">
       <MenuLateral />
-      <FC.ContentBoxRow>
-        <div>
+      <Grid gridRows="1fr" gridSize="1fr" gridPad="2%">
+        <div> 
           {" "}
           <FC.StyledH1>Painel Administrativo</FC.StyledH1>
         </div>
@@ -131,17 +132,17 @@ export const AdmProdutos: React.FC = () => {
             Adicionar Produto
           </FC.StyledButton>
         </FC.StyledForm>
-        <FC.ContentBoxCol gridSize="repeat(6, 1fr)">
+        <Grid gridSize="repeat(6, 1fr)">
           <FC.StyledH4>Produto</FC.StyledH4>
           <FC.StyledH4>Categoria</FC.StyledH4>
           <FC.StyledH4>ID</FC.StyledH4>
           <FC.StyledH4>Valor</FC.StyledH4>
           <FC.StyledH4>Estoque</FC.StyledH4>
-        </FC.ContentBoxCol>
+        </Grid>
 
         {products.map((product: any) => {
           return (
-            <FC.ContentBoxCol gridSize="repeat(6, 1fr)">
+            <Grid gridSize="repeat(6, 1fr)">
               <FC.StyledP>{product.name}</FC.StyledP>
               <FC.StyledP>{product.category_id}</FC.StyledP>
               <FC.StyledP>{product.id_product}</FC.StyledP>
@@ -155,10 +156,10 @@ export const AdmProdutos: React.FC = () => {
                 Excluir
               </FC.StyledButton>
               </FC.StyledDivForm>
-            </FC.ContentBoxCol>
+            </Grid>
           );
         })}
-      </FC.ContentBoxRow>
-    </FC.Grid>
+      </Grid>
+    </Grid>
   );
 };

@@ -5,7 +5,7 @@ interface LinkProps {
     marginY?: string;
     marginX?: string;
 }
-
+ 
 export const StyledInput = styled.input<LinkProps>`
     border:none;
     border-radius:2px 0px 0px 2px;

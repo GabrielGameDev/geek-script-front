@@ -3,7 +3,7 @@ import styled from "styled-components";
 interface GridProps {
     gridSize:string;
 }
-
+ 
 export const Grid = styled.div<GridProps>`
     height:fit-content;
     display: grid;

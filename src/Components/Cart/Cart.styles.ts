@@ -11,21 +11,7 @@ interface GridProps {
     displayContent?:string;
 }
 
-export const Grid = styled.div`
-    height:fit-content;
-    display: grid;
-    grid-template-areas:
 
-    ". a a b b ."   ;
-    padding:5% 2%;
-    text-align:center;
-    align-items:center;
-    background-color: ${props => props.theme.colors.White};
-
-    @media (max-width:809px) {
-        display:block;
-    }
-`
 
 export const ContentBox = styled.div<GridProps>`
     height:${props => props.height || 'fitcontent'};
@@ -57,7 +43,7 @@ export const StyledImg = styled.img`
     height:70px;
     background-color:${props => props.theme.colors.LightGray};
     
-`
+` 
 
 export const StyledP = styled.p`
     font-size:0.7rem;

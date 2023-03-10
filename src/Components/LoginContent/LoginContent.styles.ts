@@ -7,20 +7,9 @@ interface LinkProps {
     marginX?: string;
 }
 
+ 
 
 
-export const Grid = styled.div`
-height:fit-content;
-    display: grid;
-    grid-template-areas:
-
-    ". a ."     ;
-
-    text-align:center;
-    align-items:center;
-    background-color: ${props => props.theme.colors.Primary};
-
-`
 
 export const StyledH1 = styled.h1`
     padding:10px 30px;
@@ -42,6 +31,11 @@ export const StyledForm = styled.form`
    display:flex;
    text-align:left;
    margin-bottom:1%;
+   width:50%;
+
+   @media (max-width:809px){
+    width:95%;
+   }
     `
 
 export const StyledInput = styled.input<LinkProps>`
@@ -73,9 +67,11 @@ display:flex;
 justify-content:space-between;
 `
 export const StyledDiv = styled.div`
-grid-area: a;
 justify-content:center;
+align-items:center;
 padding:5%;
+display:flex;
+flex-direction:column;
 `
 
 export const StyledButton = styled.button<LinkProps>`

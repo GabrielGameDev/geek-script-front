@@ -72,7 +72,7 @@ export const StyledUl = styled.ul<IHeader>`
         }
 
     }
-`
+` 
 export const StyledBurger = styled.div<IHeader>`
     @media (max-width:809px) {
     width:2rem;

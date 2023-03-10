@@ -12,32 +12,6 @@ interface GridProps {
     display?:string;
 }
 
-export const Grid = styled.div<GridProps>`
-    height:fit-content;
-    display: grid;
-    grid-template-columns: ${props => props.gridSize || '1fr 4fr'};
-    padding-bottom:2%;
-    text-align:center;
-    align-items:center;
-    background-color: ${props => props.theme.colors.Primary};
-    @media (max-width:809px) {
-        grid-template-columns: ${props => props.gridSize || '1fr'};
-    }
-
-`
-
-export const ContentBoxRow = styled.div<GridProps>`
-display:grid;
-grid-template-rows:${props => props.rowSize || '1fr'};
-align-items:center;
-`
-export const ContentBoxCol = styled.div<GridProps>`
-display:grid;
-grid-template-columns:${props => props.gridSize || '1fr'};
-grid-gap: 10px;
-border-bottom:solid 1px white;
-
-`
 
 export const StyledUl = styled.ul`
 list-style-type:none;

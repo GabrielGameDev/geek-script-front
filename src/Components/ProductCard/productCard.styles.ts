@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../Theme/Theme";
 
-
+ 
 export const ProductCardStyles = styled.div`
     display: flex;
     flex-direction: column;

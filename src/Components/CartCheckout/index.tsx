@@ -1,13 +1,15 @@
 import React from "react";
 import * as FC from './CartCheckout.styles'
 import * as CC from '../Cart/Cart.styles'
+import { Grid } from "../AA/grid.styles";
+import * as Tema from '../Theme/Theme'
 
 
 export const Checkout: React.FC = () => {
     return (
-        <CC.Grid>
+        <Grid gridSize="repeat(2, 1fr)" bgColor={Tema.theme.colors.White}>
 
-            <CC.ContentBox gridArea="a" gridFractionRows="repeat (5, 1fr)">
+            <CC.ContentBox  gridFractionRows="repeat (5, 1fr)">
                 <CC.StyledH4>CHECKOUT</CC.StyledH4>
                 <CC.StyledP>Adress ------- Shipping ------- Payment</CC.StyledP>
                 <FC.StyledLabel>
@@ -21,7 +23,7 @@ export const Checkout: React.FC = () => {
                 <CC.StyledButton>Continue to payment</CC.StyledButton>
             </CC.ContentBox>
 
-            <CC.ContentBox gridArea="b" gridFractionRows="1fr 1fr 2fr">
+            <CC.ContentBox  gridFractionRows="1fr 1fr 2fr">
                 <CC.StyledH3>Your Cart</CC.StyledH3>
                 <CC.StyledP>Not ready to checkout? <a>continue shopping</a></CC.StyledP>
                 <CC.ContentBox gridFractionColumns="0.5fr 1fr" >
@@ -35,7 +37,7 @@ export const Checkout: React.FC = () => {
 
                 </CC.ContentBox>
             </CC.ContentBox>
-        </CC.Grid>
+        </Grid>
 
     )
 }

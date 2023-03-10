@@ -1,6 +1,6 @@
 import React from "react";
 import * as FC from "./AdmPanel.styles";
-import { ButtonEditar, ButtonExcluir } from "./Buttons";
+import { Grid } from "../AA/grid.styles";
 import { MenuLateral } from "./MenuLateral";
 import {
   getCategories,
@@ -36,11 +36,11 @@ export const AdmCategorias: React.FC = () => {
   }, []);
 
   return (
-    <FC.Grid>
+    <Grid gridMedia="1fr">
       <MenuLateral />
-      <FC.ContentBoxRow>
+      <Grid gridRows="1fr" gridSize="1fr"  gridPad="2%" >
         <div>
-          <FC.StyledH1>Painel Administrativo</FC.StyledH1>
+        <FC.StyledH1>Painel Administrativo</FC.StyledH1>
         </div>
         <FC.StyledForm>
           <FC.StyledInput
@@ -51,24 +51,24 @@ export const AdmCategorias: React.FC = () => {
             Adicionar Categoria
           </FC.StyledButton>
         </FC.StyledForm>
-        <FC.ContentBoxCol gridSize="repeat(2, 1fr)">
+        <Grid gridSize="repeat(2, 1fr)" gridRows="1fr">
           <FC.StyledH4>Categoria</FC.StyledH4>
-        </FC.ContentBoxCol>
+        </Grid>
         {categories.map((category) => (
-          <FC.ContentBoxCol gridSize="repeat(2, 1fr)">
+          <Grid gridSize="repeat(2, 1fr)" gridRows="1fr">
             <FC.StyledP>{category.name}</FC.StyledP>
-              <FC.ContentBoxRow rowSize="1fr">
-                <FC.StyledButton
-                  butHeight="20px"
-                  butWidth="80px"
-                  onClick={() => handleDelete(category.id_category)}
-                >
-                  Excluir
-                </FC.StyledButton>
-              </FC.ContentBoxRow>
-          </FC.ContentBoxCol>
+            <Grid gridRows="1fr" gridSize="1fr">
+              <FC.StyledButton
+                butHeight="20px"
+                butWidth="80px"
+                onClick={() => handleDelete(category.id_category)}
+              >
+                Excluir
+              </FC.StyledButton>
+            </Grid>
+          </Grid>
         ))}
-      </FC.ContentBoxRow>
-    </FC.Grid>
+      </Grid>
+    </Grid>
   );
 };

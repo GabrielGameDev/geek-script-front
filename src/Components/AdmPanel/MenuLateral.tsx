@@ -1,6 +1,7 @@
 import React from "react";
 import * as FC from "./AdmPanel.styles";
 import { useEffect } from "react";
+import { StyledUl } from "../AA/ul.styles";
 
 export const MenuLateral: React.FC = () => {
   function handleLogout() {
@@ -23,7 +24,7 @@ export const MenuLateral: React.FC = () => {
   }, []);
 
   return (
-    <FC.StyledUl>
+    <StyledUl>
       <FC.StyledA href="/adm">
         <FC.StyledLi>Produtos</FC.StyledLi>
       </FC.StyledA>
@@ -37,6 +38,6 @@ export const MenuLateral: React.FC = () => {
         <FC.StyledLi>Categorias</FC.StyledLi>
       </FC.StyledA>
       <FC.StyledButton onClick={handleLogout}>Logout</FC.StyledButton>
-    </FC.StyledUl>
+    </StyledUl>
   );
 };
