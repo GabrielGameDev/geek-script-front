@@ -73,9 +73,9 @@ export const AdmUsuarios: React.FC = () => {
   }, []);
 
   return (
-    <Grid>
+    <Grid gridMedia="1fr">
       <MenuLateral />
-      <FC.ContentBoxRow>
+      <Grid gridRows="1fr" gridSize="1fr" gridPad="2%">
         <div>
           <FC.StyledH1>Painel Administrativo</FC.StyledH1>
         </div>
@@ -100,20 +100,20 @@ export const AdmUsuarios: React.FC = () => {
             Adicionar Usuário
           </FC.StyledButton>
         </FC.StyledForm>
-        <FC.ContentBoxCol gridSize="repeat(5, 1fr)">
+        <Grid gridSize="repeat(5, 1fr)">
           <FC.StyledH4>Nome</FC.StyledH4>
           <FC.StyledH4>Email</FC.StyledH4>
           <FC.StyledH4>ID</FC.StyledH4>
           <FC.StyledH4>Perfil</FC.StyledH4>
-        </FC.ContentBoxCol>
+        </Grid>
         {users.map((user) => (
-          <FC.ContentBoxCol gridSize="repeat(5, 1fr)">
+          <Grid gridSize="repeat(5, 1fr)">
             <FC.StyledP>{user.name}</FC.StyledP>
             <FC.StyledP>{user.email}</FC.StyledP>
             <FC.StyledP>{user.id_user}</FC.StyledP>
             <FC.StyledP>{user.scope}</FC.StyledP>
             <div>
-              <FC.ContentBoxRow rowSize="1fr">
+              <Grid rowSize="1fr">
                 <FC.StyledButton
                   butHeight="20px"
                   butWidth="80px"
@@ -121,9 +121,9 @@ export const AdmUsuarios: React.FC = () => {
                 >
                   Editar
                 </FC.StyledButton>
-              </FC.ContentBoxRow>
+              </Grid>
 
-              <FC.ContentBoxRow rowSize="1fr">
+              <Grid rowSize="1fr">
                 <FC.StyledButton
                   butHeight="20px"
                   butWidth="80px"
@@ -131,11 +131,11 @@ export const AdmUsuarios: React.FC = () => {
                 >
                   Excluir
                 </FC.StyledButton>
-              </FC.ContentBoxRow>
+              </Grid>
             </div>
-          </FC.ContentBoxCol>
+          </Grid>
         ))}
-      </FC.ContentBoxRow>
+      </Grid>
     </Grid>
   );
 };
