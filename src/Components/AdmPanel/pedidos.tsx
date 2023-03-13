@@ -3,11 +3,18 @@ import * as FC from "./AdmPanel.styles";
 import { ButtonEditar, ButtonExcluir } from "../AA/button.styles";
 import { Grid } from "../AA/grid.styles";
 import { MenuLateral } from "./MenuLateral";
-import { getOrders } from "../../api/checkout";
+import { getOrders, deleteOrder } from "../../api/checkout";
 import { useState, useEffect } from "react";
 
 export const AdmPedidos: React.FC = () => {
   const [orders, setOrders] = useState([]);
+
+  function handleDelete(id) {
+    deleteOrder(id).then((response) => {
+      console.log(response.data);
+      setOrders(orders.filter((order) => order.id_purchase !== id));
+    });
+  }
 
   useEffect(() => {
     getOrders().then((res) => {
@@ -53,14 +60,7 @@ export const AdmPedidos: React.FC = () => {
               <FC.StyledButton
                 butHeight="20px"
                 butWidth="80px"
-                onClick={() => handleUpdate(product.id_product)}
-              >
-                Editar
-              </FC.StyledButton>
-              <FC.StyledButton
-                butHeight="20px"
-                butWidth="80px"
-                onClick={() => handleDeleteProduct(product.id_product)}
+                onClick={() => handleDelete(order.id_purchase)}
               >
                 Excluir
               </FC.StyledButton>

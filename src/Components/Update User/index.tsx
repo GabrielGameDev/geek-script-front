@@ -2,7 +2,7 @@ import React from "react";
 import * as FC from "../AdmPanel/AdmPanel.styles";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getUser, updateUser, User } from "../../api/user";
+import { getUserById, updateUser, User } from "../../api/user";
 
 export const UpdateUser: React.FC = () => {
   const { id } = useParams();
@@ -43,15 +43,18 @@ export const UpdateUser: React.FC = () => {
 
     updateUser(id, newUser).then((response) => {
       console.log(response.data);
+      window.location.href = "/adm/users";
     });
   }
 
   useEffect(() => {
-    getUser(id).then((response) => {
+    console.log(id);
+    getUserById(id).then((response) => {
+      console.log(response.data);
       setUser(response.data);
       setName(response.data.name);
       setEmail(response.data.email);
-      setPassword(response.data.password);
+      //setPassword(response.data.password);
       setScope(response.data.scope);
     });
   }, []);
@@ -71,7 +74,7 @@ export const UpdateUser: React.FC = () => {
         />
         <FC.StyledInput
           type="text"
-          placeholder={user?.password}
+          placeholder={"senha"}
           onChange={handlePasswordChange}
         />
         <FC.StyledInput

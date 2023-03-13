@@ -20,10 +20,14 @@ export async function getUser() {
     return api.get(`/user/profile`);
 }
 
+export async function getUserById(id: string) {
+    return api.get(`/user/admin/${id}`);
+}
+
 export async function updateUser(id: string, user: User) {
-    return api.put(`/user/${id}`, user);
+    return api.put(`/user/admin/${id}`, user);
 }
 
 export async function deleteUser(id: string) {
-    return api.delete(`/user/${id}`);
+    return api.delete(`/user/admin/${id}`);
 }

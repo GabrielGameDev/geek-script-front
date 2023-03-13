@@ -17,3 +17,7 @@ export async function getOrders() {
 export async function getOrdersByUser() {
     return api.get("/user/profile/purchases");
 }
+
+export async function deleteOrder(id: number) {
+    return api.delete(`/purchase/admin/${id}`);
+}

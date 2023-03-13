@@ -55,6 +55,7 @@ export const LoginContent: React.FC = () => {
       .catch((error) => {
         window.alert("Usuário ou senha inválidos!");
         console.log(error);
+        setLogando(false);
       });
   }
 
