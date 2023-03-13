@@ -1,41 +1,43 @@
 import React from "react";
-import * as FC from './UserPanel.styles'
-import {theme} from '../Theme/Theme'
+import * as FC from "./UserPanel.styles";
+import { theme } from "../Theme/Theme";
+import { getOrdersByUser } from "../../api/checkout";
+import { useState, useEffect } from "react";
 
 export const UserPedidos: React.FC = () => {
-    return (
-        <FC.Box>
-                <FC.StyledH1> -- Meus Pedidos -- </FC.StyledH1>
+  const [orders, setOrders] = useState<any>([]);
 
-            <FC.ContentBox>
-                <FC.StyledH4 textColor={theme.colors.Accent}>Número do pedido</FC.StyledH4>
-                <FC.StyledH4 textColor={theme.colors.Accent}>Cliente</FC.StyledH4>
-                <FC.StyledH4 textColor={theme.colors.Accent}>Valor</FC.StyledH4>
-                <FC.StyledH4 textColor={theme.colors.Accent}>Itens</FC.StyledH4>
-                <FC.StyledH4 textColor={theme.colors.Accent}>Quantidade</FC.StyledH4>
-            </FC.ContentBox>
-            <FC.ContentBox>
-                <FC.StyledP >1</FC.StyledP>
-                <FC.StyledP >João</FC.StyledP>
-                <FC.StyledP >100</FC.StyledP>
-                <FC.StyledP >Homem aranha</FC.StyledP>
-                <FC.StyledP >1</FC.StyledP>
-            </FC.ContentBox>
-            <FC.ContentBox>
-                <FC.StyledP >2</FC.StyledP>
-                <FC.StyledP >José</FC.StyledP>
-                <FC.StyledP >200</FC.StyledP>
-                <FC.StyledP >Dragon Ball Z</FC.StyledP>
-                <FC.StyledP >2</FC.StyledP>
-            </FC.ContentBox>
-            <FC.ContentBox>
-                <FC.StyledP >3</FC.StyledP>
-                <FC.StyledP >Maria</FC.StyledP>
-                <FC.StyledP >300</FC.StyledP>
-                <FC.StyledP >Camisetas</FC.StyledP>
-                <FC.StyledP >10</FC.StyledP>
-            </FC.ContentBox>
-        </FC.Box>
+  useEffect(() => {
+    getOrdersByUser().then((res) => {
+      console.log(res.data);
+      setOrders(res.data);
+    });
+  }, []);
 
-    )
-}
+  return (
+    <FC.Box>
+      <FC.StyledH1> -- Meus Pedidos -- </FC.StyledH1>
+
+      <FC.ContentBox>
+        <FC.StyledH4 textColor={theme.colors.Accent}>
+          Número do pedido
+        </FC.StyledH4>
+        <FC.StyledH4 textColor={theme.colors.Accent}>Cliente</FC.StyledH4>
+        <FC.StyledH4 textColor={theme.colors.Accent}>Valor</FC.StyledH4>
+        {/* <FC.StyledH4 textColor={theme.colors.Accent}>Itens</FC.StyledH4>
+        <FC.StyledH4 textColor={theme.colors.Accent}>Quantidade</FC.StyledH4> */}
+      </FC.ContentBox>
+      {orders.map((order) => {
+        return (
+          <FC.ContentBox key={order.id_purchase}>
+            <FC.StyledP>{order.id_purchase}</FC.StyledP>
+            <FC.StyledP>{order.User.name}</FC.StyledP>
+            <FC.StyledP>{order.total}</FC.StyledP>
+            {/* <FC.StyledP>Homem aranha</FC.StyledP>
+            <FC.StyledP>1</FC.StyledP> */}
+          </FC.ContentBox>
+        );
+      })}
+    </FC.Box>
+  );
+};

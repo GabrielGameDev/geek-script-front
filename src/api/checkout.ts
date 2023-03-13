@@ -13,3 +13,7 @@ export async function checkout(cart : Cart) {
 export async function getOrders() {
     return api.get("/purchase/admin");
 }
+
+export async function getOrdersByUser() {
+    return api.get("/user/profile/purchases");
+}

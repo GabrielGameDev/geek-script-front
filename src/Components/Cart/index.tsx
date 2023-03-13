@@ -28,6 +28,8 @@ export const CartContent: React.FC = () => {
     checkout(newCheckout)
       .then((response) => {
         console.log(response.data);
+        localStorage.removeItem("cart");
+        window.location.href = "/sucesso";
       })
       .catch((error) => {
         console.log(error.response.data);
