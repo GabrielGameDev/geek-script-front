@@ -23,9 +23,11 @@ export const AdmCategorias: React.FC = () => {
     });
   }
 
-  function handleCreate() {
+  function handleCreate(event: any) {
+    event.preventDefault();
     createCategory(category).then((res) => {
       console.log(res);
+      window.location.reload();
     });
   }
 
@@ -38,9 +40,9 @@ export const AdmCategorias: React.FC = () => {
   return (
     <Grid gridMedia="1fr">
       <MenuLateral />
-      <Grid gridRows="1fr" gridSize="1fr"  gridPad="2%" >
+      <Grid gridRows="1fr" gridSize="1fr" gridPad="2%">
         <div>
-        <FC.StyledH1>Painel Administrativo</FC.StyledH1>
+          <FC.StyledH1>Painel Administrativo</FC.StyledH1>
         </div>
         <FC.StyledForm>
           <FC.StyledInput
