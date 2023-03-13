@@ -24,9 +24,9 @@ export default function ProductsComponent() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedButton, setSelectedButton] = useState("Todos");
 
-  const handleFilterButton = (button: string) => {
+  function handleFilterButton(button: string) {
     setSelectedButton(button);
-  };
+  }
 
   function handleShowMore() {
     setCurrentPage(currentPage + 1);
@@ -59,14 +59,28 @@ export default function ProductsComponent() {
   }, []);
 
   useEffect(() => {
-    setShownProducts(products.slice(0, currentPage * 8));
+    const categories = [
+      "Todos",
+      "Tabuleiro",
+      "Games",
+      "Action Figures",
+      "Funkos",
+    ];
+    const filteredProducts =
+      selectedButton === "Todos"
+        ? products
+        : products.filter(
+            (product: Product) =>
+              product.category_id === categories.indexOf(selectedButton)
+          );
+    setShownProducts(filteredProducts.slice(0, currentPage * 8));
     setTimeout(() => {
       window.scrollTo({
         top: document.body.scrollHeight,
         behavior: "smooth",
       });
     }, 1000);
-  }, [products, currentPage]);
+  }, [products, currentPage, selectedButton]);
 
   return (
     <>
@@ -75,13 +89,13 @@ export default function ProductsComponent() {
       </ThemeProvider>
 
       <StoreDescription>
-        <DescrpDiv  >
+        <DescrpDiv>
           <h1>Products</h1>
           <p>
             Encontre o produto geek que é a sua cara. Decore sua casa, mude seu
             estilo. Aqui você encontra de tudo
           </p>
-        </DescrpDiv >
+        </DescrpDiv>
       </StoreDescription>
       <Main>
         <Categories>
@@ -93,16 +107,16 @@ export default function ProductsComponent() {
               Todos
             </FilterButton>
             <FilterButton
-              selected={selectedButton === "Camisetas" ? true : false}
-              onClick={() => handleFilterButton("Camisetas")}
+              selected={selectedButton === "Tabuleiro" ? true : false}
+              onClick={() => handleFilterButton("Tabuleiro")}
             >
-              Camisetas
+              Tabuleiro
             </FilterButton>
             <FilterButton
-              selected={selectedButton === "Funkos" ? true : false}
-              onClick={() => handleFilterButton("Funkos")}
+              selected={selectedButton === "Games" ? true : false}
+              onClick={() => handleFilterButton("Games")}
             >
-              Funkos
+              Games
             </FilterButton>
             <FilterButton
               selected={selectedButton === "Action Figures" ? true : false}
@@ -111,10 +125,10 @@ export default function ProductsComponent() {
               Action Figures
             </FilterButton>
             <FilterButton
-              selected={selectedButton === "Games" ? true : false}
-              onClick={() => handleFilterButton("Games")}
+              selected={selectedButton === "Funko" ? true : false}
+              onClick={() => handleFilterButton("Funko")}
             >
-              Games
+              Funko
             </FilterButton>
           </StyledDiv>
 
