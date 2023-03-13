@@ -10,6 +10,7 @@ align-items:center;
 border: 2px solid;
 border-radius:5px;
 padding: 5px 10px;  
+margin:30px 0px;
 display:flex; 
 text-decoration:none;
 

@@ -32,8 +32,8 @@ export const MainContent: React.FC = () => {
         </FC.ContentBox>
 
         <FC.Content1>
-          {" "}
-          <ShopAll />{" "}
+          
+          <ShopAll />
         </FC.Content1>
 
         <FC.Content2>

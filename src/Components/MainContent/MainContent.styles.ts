@@ -17,6 +17,7 @@ export const ContentBox = styled.div`
   padding: 0.25rem;
   align-items: center;
   justify-content: center;
+  text-align:center;
   @media (max-width: 550px) {
     flex-direction: column; 
   }
@@ -43,7 +44,6 @@ width:100%;
 height:100%;
 border-radius:20px;
 object-fit: cover;
-
 @media (max-width: 809px) {
     border-radius:0px;
   }
