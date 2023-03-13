@@ -1,7 +1,7 @@
 import React from "react";
 import * as FC from "./LoginContent.styles";
 import { useState } from "react";
-import * as Tema from '../Theme/Theme' 
+import * as Tema from "../Theme/Theme";
 import { login } from "../../api/login";
 import { getUser } from "../../api/user";
 import { Grid } from "../AA/grid.styles";
@@ -39,7 +39,7 @@ export const LoginContent: React.FC = () => {
           console.log(response.data);
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("id", response.data.id);
-          getUser(response.data.id).then((response) => {
+          getUser().then((response) => {
             console.log(response.data);
             localStorage.setItem("user", JSON.stringify(response.data));
             console.log(response.data.scope);
@@ -59,7 +59,12 @@ export const LoginContent: React.FC = () => {
   }
 
   return (
-    <Grid gridPad='0' gridSize="repeat(1, 1fr)" gridRows="repeat(1, 1fr)" bgColor={Tema.theme.colors.Primary}>
+    <Grid
+      gridPad="0"
+      gridSize="repeat(1, 1fr)"
+      gridRows="repeat(1, 1fr)"
+      bgColor={Tema.theme.colors.Primary}
+    >
       <FC.StyledDiv>
         <FC.StyledForm>
           <FC.StyledH1>Seja bem-vindo</FC.StyledH1>
@@ -84,7 +89,9 @@ export const LoginContent: React.FC = () => {
             <FC.StyledLink>Esqueceu a senha ?</FC.StyledLink>
           </FC.StyledDivForm>
         </FC.StyledForm>
-        <FC.StyledLink colorLink="LightGray" href="/cadastro" >ou crie uma conta</FC.StyledLink>
+        <FC.StyledLink colorLink="LightGray" href="/cadastro">
+          ou crie uma conta
+        </FC.StyledLink>
       </FC.StyledDiv>
     </Grid>
   );

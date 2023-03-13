@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 import { number } from "prop-types";
 import { Grid } from "../AA/grid.styles";
 import * as Tema from "../Theme/Theme";
-import { checkout } from "../../api/checkout";
+import { checkout, Cart } from "../../api/checkout";
 
 export const CartContent: React.FC = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [purchaseIdList, setPurchaseIdList] = useState([]);
+  // const [purchaseIdList, setPurchaseIdList] = useState([]);
 
   function getCategoryById(id: number) {
     return categories.find((category) => category.id_category === id);
@@ -20,9 +20,9 @@ export const CartContent: React.FC = () => {
 
   function handleCheckout(event) {
     event.preventDefault();
-    const newCheckout = {
-      total: 249.5,
-      purchaseIdList: [4],
+    const newCheckout: Cart = {
+      purchaseTotal: 289.84,
+      purchaseIdList: [1, 2],
     };
     console.log(newCheckout);
     checkout(newCheckout)
@@ -48,7 +48,7 @@ export const CartContent: React.FC = () => {
     let cart = [];
     if (cartItems) {
       cart = JSON.parse(cartItems);
-      setPurchaseIdList(cart);
+      // setPurchaseIdList(cart);
     }
     let total = 0;
     cart.forEach((id: any) => {

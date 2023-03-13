@@ -16,8 +16,8 @@ export async function getUsers() {
     return api.get("/user/admin");
 }
 
-export async function getUser(id: string) {
-    return api.get(`/user/${id}`);
+export async function getUser() {
+    return api.get(`/user/profile`);
 }
 
 export async function updateUser(id: string, user: User) {
