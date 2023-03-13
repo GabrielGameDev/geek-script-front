@@ -12,17 +12,26 @@ export const CartContent: React.FC = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
   // const [purchaseIdList, setPurchaseIdList] = useState([]);
 
   function getCategoryById(id: number) {
     return categories.find((category) => category.id_category === id);
   }
 
+  function handleDelete(id: number) {
+    const newCart = cartItems.filter((item: any) => item != id);
+    setCartItems(newCart);
+    console.log(id);
+    localStorage.setItem("cart", JSON.stringify(newCart));
+    window.location.reload();
+  }
+
   function handleCheckout(event) {
     event.preventDefault();
     const newCheckout: Cart = {
-      purchaseTotal: 289.84,
-      purchaseIdList: [1, 2],
+      purchaseTotal: totalPrice,
+      purchaseIdList: cartItems,
     };
     console.log(newCheckout);
     checkout(newCheckout)
@@ -46,14 +55,16 @@ export const CartContent: React.FC = () => {
       setCategories(response.data);
     });
 
-    const cartItems = localStorage.getItem("cart");
-    let cart = [];
-    if (cartItems) {
-      cart = JSON.parse(cartItems);
+    const items = localStorage.getItem("cart");
+    if (items) {
+      setCartItems(JSON.parse(items));
       // setPurchaseIdList(cart);
     }
+  }, []);
+
+  useEffect(() => {
     let total = 0;
-    cart.forEach((id: any) => {
+    cartItems.forEach((id: any) => {
       getProduct(id).then((response) => {
         // console.log(response.data);
         setProducts((products) => [...products, response.data]);
@@ -62,7 +73,7 @@ export const CartContent: React.FC = () => {
         setTotalPrice(total);
       });
     });
-  }, []);
+  }, [cartItems]);
 
   return (
     <Grid gridSize="repeat(2, 1fr)" bgColor={Tema.theme.colors.White}>
@@ -87,8 +98,16 @@ export const CartContent: React.FC = () => {
               {/* <FC.StyledP>Quantidade: </FC.StyledP> */}
               <FC.StyledH5>Preço:{product.price}</FC.StyledH5>
               <div>
-              <FC.StyledButton bgWidth="50px" bgHeight="15px" bgColor={Tema.theme.colors.DarkGray}>Excluir</FC.StyledButton>
-              </div></FC.ContentBox>
+                <FC.StyledButton
+                  onClick={() => handleDelete(product.id_product)}
+                  bgWidth="50px"
+                  bgHeight="15px"
+                  bgColor={Tema.theme.colors.DarkGray}
+                >
+                  Excluir
+                </FC.StyledButton>
+              </div>
+            </FC.ContentBox>
           </FC.ContentBox>
         ))}
       </FC.ContentBox>
@@ -106,9 +125,11 @@ export const CartContent: React.FC = () => {
           </FC.ContentBox>
           <FC.StyledP>Frete: Grátis</FC.StyledP>
           <FC.StyledP>Total: R${totalPrice.toFixed(2)}</FC.StyledP>
-          <FC.StyledButton onClick={handleCheckout}>
-            Confirmar pedido
-          </FC.StyledButton>
+          {cartItems.length > 0 && (
+            <FC.StyledButton onClick={handleCheckout}>
+              Confirmar pedido
+            </FC.StyledButton>
+          )}
         </FC.StyledForm>
       </FC.ContentBox>
     </Grid>
