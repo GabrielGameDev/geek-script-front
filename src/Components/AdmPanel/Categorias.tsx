@@ -51,12 +51,14 @@ export const AdmCategorias: React.FC = () => {
             Adicionar Categoria
           </FC.StyledButton>
         </FC.StyledForm>
-        <Grid gridSize="repeat(2, 1fr)" gridRows="1fr">
+        <Grid gridSize="repeat(3, 1fr)" gridRows="1fr">
           <FC.StyledH4>Categoria</FC.StyledH4>
+          <FC.StyledH4>ID</FC.StyledH4>
         </Grid>
         {categories.map((category) => (
-          <Grid gridSize="repeat(2, 1fr)" gridRows="1fr">
+          <Grid gridSize="repeat(3, 1fr)" gridRows="1fr">
             <FC.StyledP>{category.name}</FC.StyledP>
+            <FC.StyledP>{category.id_category}</FC.StyledP>
             <Grid gridRows="1fr" gridSize="1fr">
               <FC.StyledButton
                 butHeight="20px"

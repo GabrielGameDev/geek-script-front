@@ -9,6 +9,7 @@ export const Images = styled.div`
     img{
         object-fit: cover;
         border: 1px solid #ccc;
+        width:80%;
 
         @media (max-width:809px) {
         width:100%;            

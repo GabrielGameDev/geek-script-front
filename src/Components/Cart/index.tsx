@@ -69,13 +69,13 @@ export const CartContent: React.FC = () => {
       <FC.ContentBox gridFractionRows="1fr 1fr 2fr">
         <FC.StyledH3>Your Cart</FC.StyledH3>
         <FC.StyledP>
-          Not ready to checkout? <a>continue shopping</a>
+          Not ready to checkout? <a href="/products">continue shopping</a>
         </FC.StyledP>
         {products.map((product: any) => (
           <FC.ContentBox gridFractionColumns="0.5fr 1fr">
             <FC.StyledImg src={product.photo} />
             <FC.ContentBox
-              gridFractionRows="1fr 1fr 1fr 1fr"
+              gridFractionRows="repeat(4, 1fr)"
               height="70px"
               justifyContent="right"
               textAlign="end"
@@ -86,7 +86,9 @@ export const CartContent: React.FC = () => {
               </FC.StyledP>
               {/* <FC.StyledP>Quantidade: </FC.StyledP> */}
               <FC.StyledH5>Preço:{product.price}</FC.StyledH5>
-            </FC.ContentBox>
+              <div>
+              <FC.StyledButton bgWidth="50px" bgHeight="15px" bgColor={Tema.theme.colors.DarkGray}>Excluir</FC.StyledButton>
+              </div></FC.ContentBox>
           </FC.ContentBox>
         ))}
       </FC.ContentBox>

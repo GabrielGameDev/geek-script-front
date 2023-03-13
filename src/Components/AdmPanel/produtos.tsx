@@ -113,7 +113,7 @@ export const AdmProdutos: React.FC = () => {
             onChange={handleProductNameChange}
           ></FC.StyledInput>
           <FC.StyledInput
-            placeholder="Categoria"
+            placeholder="Categoria (número)"
             onChange={handleCategoryChange}
           ></FC.StyledInput>
           <FC.StyledInput

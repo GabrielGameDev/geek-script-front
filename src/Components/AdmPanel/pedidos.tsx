@@ -55,7 +55,7 @@ export const AdmPedidos: React.FC = () => {
               <FC.StyledLi fontColor="#D1C4E9">Funko Naruto</FC.StyledLi>
               <FC.StyledLi fontColor="#D1C4E9">Caneca Supernatural</FC.StyledLi>
             </ol>
-            <FC.StyledP>100</FC.StyledP>
+            <FC.StyledP>1</FC.StyledP>
             <FC.StyledDivForm display="column" justifyC="space-around">
               <FC.StyledButton
                 butHeight="20px"

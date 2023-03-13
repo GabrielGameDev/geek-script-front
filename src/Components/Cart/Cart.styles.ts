@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../Theme/Theme";
 
 interface GridProps {
     gridArea?: string;
@@ -9,6 +10,9 @@ interface GridProps {
     textAlign?: string;
     justifyContent?:string;
     displayContent?:string;
+    bgColor?:string;
+    bgWidth?:string;
+    bgHeight?:string;
 }
 
 
@@ -70,14 +74,14 @@ export const StyledInput = styled.input`
     }
 `
 
-export const StyledButton = styled.a`
-    background-color: ${props => props.theme.colors.Primary};
+export const StyledButton = styled.a<GridProps>`
+    background-color: ${props => props.bgColor || theme.colors.Primary};
     border:none;
-    width:100%;
+    width:${props => props.bgWidth || '100%' } ;
+    height:${props => props.bgHeight} ;
     font-size:0.7rem;   
     padding:3%;
     color:${props => props.theme.colors.LightPrimary};
-    display:block;
     text-align:center;
     text-decoration:none;
 
